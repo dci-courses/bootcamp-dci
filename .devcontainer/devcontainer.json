@@ -1,0 +1,26 @@
+{
+    "name": "BootCamp DCI DevContainer",
+    "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bullseye",
+    "forwardPorts": [
+        8888
+    ],
+    "postCreateCommand": "pip install --no-cache-dir -r requirements.txt && pip install -e . && pip install nbdev jupyterlab ipykernel && python -m ipykernel install --name bootcampdci --display-name 'Python (BootCamp DCI)'",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter",
+                "ms-azuretools.vscode-docker"
+            ],
+            "settings": {
+                "jupyter.notebook.defaultKernel": "Python (BootCamp DCI)",
+                "jupyter.kernels.filter": [
+                    {
+                        "name": "bootcampdci"
+                    }
+                ]
+            }
+        }
+    },
+    "remoteUser": "root"
+}
