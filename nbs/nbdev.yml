@@ -2,7 +2,7 @@ project:
   output-dir: _docs
 
 website:
-  title: "bootcamp-dci"
+  title: "BootCamp DCI"
   site-url: "https://dci-courses.github.io/bootcamp-dci"
   description: "BootCamp DCI"
   repo-branch: main

@@ -1,12 +1,23 @@
 project:
   type: website
-
+  output-dir: _docs
+lang: es
 format:
   html:
     theme: cosmo
-    css: styles.css
+    css: 
+      - styles.css
+      - tufte.css
     toc: true
     keep-md: true
+    grid:
+      sidebar-width: 250px
+      body-width: 900px
+      margin-width: 300px
+    reference-location: margin
+    citation-location: margin
+    cap-location: margin
+    fig-responsive: false
   commonmark: default
 
 website:
@@ -14,9 +25,13 @@ website:
   open-graph: true
   repo-actions: [issue]
   navbar:
-    background: primary
+    background: transparent
     search: true
   sidebar:
     style: floating
 
 metadata-files: [nbdev.yml, sidebar.yml]
+
+execute:
+  eval: false
+  cache: false
