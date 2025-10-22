@@ -4,12 +4,21 @@ description: "Este es un modelo pre-entrenado que detecta objetos desde una imag
 format: html
 ---
 
+Este modelo utiliza COCO-SSD (Common Objects in Context - Single Shot Detection) para identificar y localizar objetos en tiempo real. El modelo puede detectar 80 clases diferentes de objetos comunes como personas, animales, vehículos, muebles y más.
+
+**Características:**
+- Detección en tiempo real desde tu webcam
+- Cuadros delimitadores verdes alrededor de cada objeto detectado
+- Etiquetas que identifican cada objeto
+
+Permite el acceso a tu cámara web cuando se te solicite para ver la detección en acción.
+
 <div id="p5-sketch">
   <div id="canvas-container"></div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
-<script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/p5@1.11.7/lib/p5.js"></script>
+<script src="https://unpkg.com/ml5@0.12.2/dist/ml5.min.js"></script>
 
 <script>
 (function () {
@@ -18,39 +27,51 @@ format: html
         let detector;
         let detections = [];
 
-        function preload() {
-            detector = ml5.objectDetector("cocossd");
-        }
-
-        function setup() {
-            createCanvas(640, 480);
+        p.setup = function() {
+            p.createCanvas(640, 480);
 
             // Using webcam feed as video input, hiding html element to avoid duplicate with canvas
-            video = createCapture(VIDEO);
-            video.size(width, height);
+            video = p.createCapture(p.VIDEO);
+            video.size(p.width, p.height);
             video.hide();
 
-            detector.detectStart(video, gotDetections);
+            // Create detector AFTER video is created
+            detector = ml5.objectDetector('cocossd', modelReady);
+        }
+
+        function modelReady() {
+            console.log("Model Ready!");
+            detect();
+        }
+
+        function detect() {
+            detector.detect(video, gotDetections);
         }
 
         // Callback function is called each time the object detector finishes processing a frame.
-        function gotDetections(results) {
+        function gotDetections(error, results) {
+            if (error) {
+                console.error(error);
+                return;
+            }
             // Update detections array with the new results
             detections = results;
+            // Call detect again for continuous detection
+            detect();
         }
 
-        function draw() {
+        p.draw = function() {
             // Draw the current video frame onto the canvas.
-            image(video, 0, 0);
+            p.image(video, 0, 0);
 
             for (let i = 0; i < detections.length; i += 1) {
                 let detection = detections[i];
 
                 // Draw bounding box
-                stroke(0, 255, 0);
-                strokeWeight(4);
-                noFill();
-                rect(
+                p.stroke(0, 255, 0);
+                p.strokeWeight(4);
+                p.noFill();
+                p.rect(
                     detection.x,
                     detection.y,
                     detection.width,
@@ -58,10 +79,10 @@ format: html
                 );
 
                 // Draw label
-                noStroke();
-                fill(255);
-                textSize(24);
-                text(detection.label, detection.x + 10, detection.y + 24);
+                p.noStroke();
+                p.fill(255);
+                p.textSize(24);
+                p.text(detection.label, detection.x + 10, detection.y + 24);
             }
         }
     };

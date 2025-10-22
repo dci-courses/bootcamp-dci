@@ -1,8 +1,24 @@
 ---
 title: "Clasificador de Sonido"
-description: "Ejemplo de modelo pre-entrenado funcionando"
+description: "Este es un modelo pre-entrenado que clasifica comandos de voz en tiempo real usando tu micrófono."
 format: html
 ---
+
+Este modelo utiliza SpeechCommands18w, entrenado para reconocer 18 palabras de comando en inglés. El clasificador escucha continuamente a través de tu micrófono y detecta cuál de las 18 palabras está siendo pronunciada.
+
+**Características:**
+- Clasificación de audio en tiempo real desde tu micrófono
+- Reconoce 18 comandos: números del 0 al 9, y palabras como "up", "down", "left", "right", "go", "stop", "yes" y "no"
+- Umbral de probabilidad configurable para mejorar la precisión
+
+**Instrucciones:**
+1. Permite el acceso a tu micrófono cuando se te solicite
+2. Di en voz alta y clara una de las 18 palabras mostradas en pantalla
+3. El modelo detectará la palabra y la mostrará en grande en la parte superior
+
+::: {.callout-note}
+Para mejores resultados, habla claramente y en un ambiente con poco ruido de fondo.
+:::
 
 <div id="p5-sketch">
   <div id="canvas-container"></div>
