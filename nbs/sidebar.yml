@@ -11,3 +11,8 @@ website:
           - classification/classification_keylogger.ipynb
           - classification/classification_ransomware.ipynb
           - classification/classification_software_defects.ipynb
+      - section: ml5
+        contents:
+          - ml5/sound_classifier.qmd
+          - ml5/object_detection.qmd
+
