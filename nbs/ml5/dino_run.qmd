@@ -94,9 +94,9 @@ window.addEventListener('load', function() {
 
             p.preload = function() {
                 // Load images
-                imgDino = p.loadImage("/data/images/dino_run/dino.png");
-                imgTree = p.loadImage("/data/images/dino_run/tree.png");
-                imgExplosion = p.loadImage("/data/images/dino_run/explosion.png");
+                imgDino = p.loadImage("../data/images/dino_run/dino.png");
+                imgTree = p.loadImage("../data/images/dino_run/tree.png");
+                imgExplosion = p.loadImage("../data/images/dino_run/explosion.png");
                 
                 // Load Teachable Machine model
                 classifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/Ij_wIPp5Q/model.json', modelLoaded);
@@ -278,7 +278,7 @@ window.addEventListener('load', function() {
                     this.groundY = groundY;
                     this.y = groundY - this.r;
                     this.vy = 0;
-                    this.gravity = 1.2;
+                    this.gravity = 1.0;
                     this.totalJumps = 0;
                     this.isDead = false;
                     this.hitPoints = 3;
@@ -290,7 +290,7 @@ window.addEventListener('load', function() {
                     // Only jump if on the ground
                     if (this.y === this.groundY - this.r) {
                         this.totalJumps++;
-                        this.vy = -20;
+                        this.vy = -18;
                     }
                 }
 
@@ -465,9 +465,9 @@ let imgTree;
 let imgExplosion;
 
 function preload() {
-    imgDino = loadImage("/data/images/dino_run/dino.png");
-    imgTree = loadImage("/data/images/dino_run/tree.png");
-    imgExplosion = loadImage("/data/images/dino_run/explosion.png");
+    imgDino = loadImage("../data/images/dino_run/dino.png");
+    imgTree = loadImage("../data/images/dino_run/tree.png");
+    imgExplosion = loadImage("../data/images/dino_run/explosion.png");
     classifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/Ij_wIPp5Q/model.json');
 }
 
