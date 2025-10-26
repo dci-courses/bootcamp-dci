@@ -160,3 +160,184 @@ window.addEventListener('load', function() {
 });
 
 </script>
+
+## Explicación del Código
+
+### Código Completo
+
+```javascript
+let video;
+let detector;
+let detections = [];
+
+function setup() {
+    createCanvas(640, 480);
+    
+    // Using webcam feed as video input
+    video = createCapture(VIDEO, videoReady);
+    video.size(width, height);
+    video.hide();
+}
+
+function videoReady() {
+    console.log("Video Ready!");
+    // Create detector AFTER video is ready
+    detector = ml5.objectDetector('cocossd', modelReady);
+}
+
+function modelReady() {
+    console.log("Model Ready!");
+    detect();
+}
+
+function detect() {
+    detector.detect(video, gotDetections);
+}
+
+function gotDetections(error, results) {
+    if (error) {
+        console.error(error);
+        return;
+    }
+    // Update detections array with the new results
+    detections = results;
+    // Call detect again for continuous detection
+    detect();
+}
+
+function draw() {
+    // Draw the current video frame onto the canvas
+    image(video, 0, 0);
+    
+    for (let i = 0; i < detections.length; i++) {
+        let detection = detections[i];
+        
+        // Draw bounding box
+        stroke(0, 255, 0);
+        strokeWeight(4);
+        noFill();
+        rect(detection.x, detection.y, detection.width, detection.height);
+        
+        // Draw label
+        noStroke();
+        fill(255);
+        textSize(24);
+        text(detection.label, detection.x + 10, detection.y + 24);
+    }
+}
+```
+
+### 1. Declaración de Variables
+
+Primero, declaramos las variables que necesitaremos durante todo el proceso:
+
+```javascript
+let video;
+let detector;
+let detections = [];
+```
+
+- `video`: Almacenará la captura de la cámara web
+- `detector`: Contendrá el modelo COCO-SSD de ml5.js
+- `detections`: Array que guardará los objetos detectados en cada frame
+
+### 2. Configuración Inicial (setup)
+
+La función `setup()` se ejecuta una vez al inicio y configura el canvas y la cámara:
+
+```javascript
+function setup() {
+    createCanvas(640, 480);
+    video = createCapture(VIDEO, videoReady);
+    video.size(width, height);
+    video.hide();
+}
+```
+
+- `createCanvas(640, 480)`: Crea un lienzo de 640x480 píxeles para mostrar el video
+- `createCapture(VIDEO, videoReady)`: Captura el video de la webcam y llama a `videoReady` cuando esté listo
+- `video.hide()`: Oculta el elemento HTML del video (solo mostramos el canvas)
+
+### 3. Carga del Modelo (videoReady)
+
+Esta función se ejecuta cuando el video está listo, garantizando que el detector tenga video para analizar:
+
+```javascript
+function videoReady() {
+    detector = ml5.objectDetector('cocossd', modelReady);
+}
+```
+
+- `ml5.objectDetector('cocossd', modelReady)`: Carga el modelo COCO-SSD pre-entrenado
+- Se llama solo después de que el video esté disponible para evitar errores
+- Cuando el modelo carga, llama automáticamente a `modelReady()`
+
+### 4. Inicio de Detección (modelReady y detect)
+
+Estas funciones inician el ciclo de detección continua:
+
+```javascript
+function modelReady() {
+    detect();
+}
+
+function detect() {
+    detector.detect(video, gotDetections);
+}
+```
+
+- `detect()`: Función que inicia una detección en el frame actual del video
+- `detector.detect(video, gotDetections)`: Analiza el video y llama a `gotDetections` con los resultados
+
+### 5. Procesamiento de Resultados (gotDetections)
+
+Esta función recibe los objetos detectados y mantiene la detección continua:
+
+```javascript
+function gotDetections(error, results) {
+    if (error) {
+        console.error(error);
+        return;
+    }
+    detections = results;
+    detect();
+}
+```
+
+- `error`: Contiene información si algo salió mal
+- `results`: Array con todos los objetos detectados en el frame
+- `detections = results`: Actualiza el array de detecciones
+- `detect()`: Llama recursivamente para detección continua
+
+### 6. Visualización (draw)
+
+La función `draw()` se ejecuta continuamente y dibuja el video con las detecciones:
+
+```javascript
+function draw() {
+    image(video, 0, 0);
+    
+    for (let i = 0; i < detections.length; i++) {
+        let detection = detections[i];
+        
+        // Draw bounding box
+        stroke(0, 255, 0);
+        strokeWeight(4);
+        noFill();
+        rect(detection.x, detection.y, detection.width, detection.height);
+        
+        // Draw label
+        noStroke();
+        fill(255);
+        textSize(24);
+        text(detection.label, detection.x + 10, detection.y + 24);
+    }
+}
+```
+
+- `image(video, 0, 0)`: Dibuja el frame actual del video en el canvas
+- `rect()`: Dibuja un rectángulo verde alrededor de cada objeto detectado
+- `text()`: Muestra la etiqueta del objeto (ej: "person", "car", "dog")
+- `detection.x, detection.y, detection.width, detection.height`: Coordenadas del objeto
+
+</script>

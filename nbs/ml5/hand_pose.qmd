@@ -137,3 +137,144 @@ window.addEventListener('load', function() {
 });
 
 </script>
+
+## Explicación del Código
+
+### Código Completo
+
+```javascript
+let handpose;
+let video;
+let predictions = [];
+
+function setup() {
+    createCanvas(640, 480);
+    
+    // Create the webcam video and hide it
+    video = createCapture(VIDEO);
+    video.size(640, 480);
+    video.hide();
+    
+    // Load the handpose model
+    handpose = ml5.handpose(video, modelReady);
+}
+
+function modelReady() {
+    console.log("Handpose Model Ready!");
+    // Start detecting hands
+    handpose.on('predict', gotHands);
+}
+
+// Callback function for when handpose outputs data
+function gotHands(results) {
+    // Save the output to the predictions variable
+    predictions = results;
+}
+
+function draw() {
+    // Draw the webcam video
+    image(video, 0, 0, width, height);
+    
+    // Draw all the tracked hand points
+    for (let i = 0; i < predictions.length; i++) {
+        let prediction = predictions[i];
+        for (let j = 0; j < prediction.landmarks.length; j++) {
+            let keypoint = prediction.landmarks[j];
+            fill(0, 255, 0);
+            noStroke();
+            circle(keypoint[0], keypoint[1], 10);
+        }
+    }
+}
+```
+
+### 1. Declaración de Variables
+
+Primero, declaramos las variables que necesitaremos:
+
+```javascript
+let handpose;
+let video;
+let predictions = [];
+```
+
+- `handpose`: Almacenará el modelo HandPose de ml5.js
+- `video`: Contendrá la captura de la cámara web
+- `predictions`: Array que guardará todas las manos detectadas y sus puntos clave
+
+### 2. Configuración Inicial (setup)
+
+La función `setup()` configura el canvas, la cámara y carga el modelo:
+
+```javascript
+function setup() {
+    createCanvas(640, 480);
+    video = createCapture(VIDEO);
+    video.size(640, 480);
+    video.hide();
+    handpose = ml5.handpose(video, modelReady);
+}
+```
+
+- `createCanvas(640, 480)`: Crea un lienzo de 640x480 píxeles
+- `createCapture(VIDEO)`: Captura el video de la webcam
+- `video.hide()`: Oculta el elemento HTML del video (solo mostramos el canvas)
+- `ml5.handpose(video, modelReady)`: Carga el modelo HandPose con el video como entrada
+
+### 3. Inicio de Detección (modelReady)
+
+Esta función se ejecuta cuando el modelo está listo:
+
+```javascript
+function modelReady() {
+    console.log("Handpose Model Ready!");
+    handpose.on('predict', gotHands);
+}
+```
+
+- `handpose.on('predict', gotHands)`: Registra un listener para las predicciones
+- Cada vez que el modelo detecta manos, llama automáticamente a `gotHands()`
+- Este patrón permite detección continua en tiempo real
+
+### 4. Procesamiento de Resultados (gotHands)
+
+Esta función recibe las predicciones del modelo:
+
+```javascript
+function gotHands(results) {
+    predictions = results;
+}
+```
+
+- `results`: Array con todas las manos detectadas en el frame actual
+- Cada mano contiene 21 puntos clave (landmarks) con coordenadas x, y, z
+- `predictions` se actualiza continuamente con las nuevas detecciones
+
+### 5. Visualización (draw)
+
+La función `draw()` se ejecuta continuamente y dibuja el video con los puntos de la mano:
+
+```javascript
+function draw() {
+    image(video, 0, 0, width, height);
+    
+    for (let i = 0; i < predictions.length; i++) {
+        let prediction = predictions[i];
+        for (let j = 0; j < prediction.landmarks.length; j++) {
+            let keypoint = prediction.landmarks[j];
+            fill(0, 255, 0);
+            noStroke();
+            circle(keypoint[0], keypoint[1], 10);
+        }
+    }
+}
+```
+
+- `image(video, 0, 0, width, height)`: Dibuja el frame actual del video
+- Primer bucle `for`: Itera sobre cada mano detectada
+- Segundo bucle `for`: Itera sobre los 21 puntos clave de cada mano
+- `keypoint[0], keypoint[1]`: Coordenadas x, y de cada punto
+- `circle()`: Dibuja un círculo verde de 10 píxeles en cada punto clave
+- Los 21 puntos incluyen: muñeca, nudillos, articulaciones y puntas de los dedos
+
+</script>
