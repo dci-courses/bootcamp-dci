@@ -13,7 +13,9 @@ website:
           - classification/classification_software_defects.ipynb
       - section: ml5 + p5.js
         contents:
+          - ml5/image_classification.qmd
           - ml5/sound_classifier.qmd
           - ml5/object_detection.qmd
           - ml5/hand_pose.qmd
+          - ml5/dino_run.qmd
 

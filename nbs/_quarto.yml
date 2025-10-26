@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: _docs
+  resources:
+    - data/
+
 lang: es
 format:
   html:
