@@ -17,4 +17,5 @@ website:
           - ml5/sound_classifier.qmd
           - ml5/object_detection.qmd
           - ml5/hand_pose.qmd
+          - ml5/dino_run.qmd
 
