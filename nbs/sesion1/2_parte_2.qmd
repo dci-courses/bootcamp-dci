@@ -1,0 +1,30 @@
+---
+format: html
+toc: false
+---
+
+## Qué significa implementar un clasificador
+
+Entender qué significa implementar un clasificador es el segundo paso para comprender una funcionalidad de clasificación de imágenes como parte de un sistema de software. En esta etapa, el foco no está en cómo se entrena un modelo ni en los detalles matemáticos, sino en **qué es un clasificador**, **qué decisiones implica su implementación** y **qué rol cumple dentro de la funcionalidad completa**.
+
+Un **clasificador** puede entenderse como una funcionalidad de software que recibe datos de entrada y produce una **categoría** como resultado. Su tarea no es describir los datos ni interpretarlos de forma humana, sino decidir a cuál de las clases disponibles se parecen más esos datos. En el contexto de imágenes, esto significa decidir, por ejemplo, si una imagen pertenece a una clase u otra.
+
+Siguiendo el ejemplo utilizado anteriormente, un clasificador funciona de manera similar a una persona que, después de observar muchas veces las condiciones del día, decide si el clima será “bueno” o “malo”. El clasificador no calcula grados ni explica por qué ocurre el fenómeno; simplemente observa los datos de entrada y decide a cuál de las categorías disponibles se parecen más. En el caso de imágenes, el proceso es análogo: el sistema recibe una imagen nueva y, en lugar de describirla, decide si se parece más a los ejemplos que representan una clase u otra, produciendo así una predicción categórica.
+
+Implementar un clasificador implica, en primer lugar, **definir las clases** con las que el sistema va a trabajar. Estas clases no existen de manera natural; son una decisión de diseño. El desarrollador debe decidir qué categorías son relevantes para el problema que quiere resolver y cómo se diferencian entre sí. Esta decisión condiciona directamente el comportamiento del sistema y el tipo de predicciones que podrá producir.
+
+En segundo lugar, implementar un clasificador implica decidir **qué datos se utilizarán como entrada**. En el caso de imágenes, el sistema no recibe conceptos como “objeto” o “forma”, sino datos numéricos que representan la imagen. Aunque estas transformaciones se abstraen en herramientas modernas, es importante entender que el clasificador siempre trabaja con datos, no con significados.
+
+Para explorar estas ideas de manera concreta, en esta parte se introduce el uso de **Teachable Machine**  
+https://teachablemachine.withgoogle.com/
+
+Teachable Machine permite crear un clasificador de imágenes de forma visual, sin escribir código, lo que facilita observar el proceso completo sin distraerse con detalles técnicos. A través de esta herramienta es posible:
+
+- Definir explícitamente las clases del problema  
+- Proporcionar ejemplos para cada clase  
+- Observar cómo el sistema comienza a distinguir entre ellas  
+
+El objetivo de utilizar Teachable Machine no es aprender técnicas de entrenamiento, sino **hacer visible qué significa implementar un clasificador como una funcionalidad de software**. Al crear un clasificador sencillo, se puede observar que el sistema no “entiende” las imágenes, sino que aprende a diferenciar patrones a partir de ejemplos proporcionados.
+
+Otro aspecto importante es comprender que implementar un clasificador no garantiza resultados correctos. El clasificador puede cometer errores, especialmente cuando las clases están mal definidas o cuando los ejemplos no representan adecuadamente el problema. Esto muestra que la calidad del clasificador depende directamente de las decisiones tomadas durante su implementación, no de una supuesta comprensión del sistema.
+
