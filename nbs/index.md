@@ -18,6 +18,7 @@ El material está organizado para que:
 
 En este bootcamp aprenderás a:
 
+
 - Comprender cómo una **funcionalidad basada en IA** se integra dentro de un sistema de software  
 - Implementar una **funcionalidad de clasificación de imágenes** utilizando **ml5.js 🤖** junto con **p5.js 🎨**  
 - Analizar **entradas, salidas, flujo de datos y decisiones de diseño** asociadas a funcionalidades con IA  
