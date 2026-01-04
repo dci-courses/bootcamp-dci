@@ -36,11 +36,11 @@ Este ejemplo usa una imagen predefinida. El modelo puede clasificar cualquier im
 <script src="https://unpkg.com/ml5@0.12.2/dist/ml5.min.js"></script>
 
 <script>
-// Esperar a que ml5 se haya cargado completamente
+// Wait for ml5 to be fully loaded
 window.addEventListener('load', function() {
-    // Verificación adicional para asegurar que ml5 esté disponible
+    // Extra check to ensure ml5 is available
     if (typeof ml5 === 'undefined') {
-        console.error('ml5 no está cargado');
+        console.error('ml5 is not loaded');
         return;
     }
 
@@ -59,21 +59,21 @@ window.addEventListener('load', function() {
         stopButton.style.display = 'inline-block';
         statusMessage.textContent = 'Cargando modelo...';
         
-        // Mostrar el contenedor del canvas
+        // Show the canvas container
         sketchContainer.style.display = 'block';
 
         const sketch = (p) => {
-            // Inicializar el clasificador de imágenes con MobileNet
+            // Initialize the Image Classifier method with MobileNet
             let classifier;
 
-            // Variable para almacenar la imagen que se va a clasificar
+            // A variable to hold the image we want to classify
             let img;
 
-            // Variables para mostrar los resultados en el canvas
+            // Variables for displaying the results on the canvas
             let label = "";
             let confidence = "";
 
-            // Arreglo de imágenes disponibles
+            // Array of available images
             const images = [
                 "../data/images/image_classification/cheetah.png",
                 "../data/images/image_classification/flamingo.png",
@@ -83,7 +83,7 @@ window.addEventListener('load', function() {
 
             p.preload = function() {
                 classifier = ml5.imageClassifier("MobileNet");
-                // Seleccionar una imagen de forma aleatoria
+                // Randomly select one image
                 const randomImage = images[Math.floor(Math.random() * images.length)];
                 img = p.loadImage(randomImage);
             }
@@ -93,14 +93,14 @@ window.addEventListener('load', function() {
                 statusMessage.textContent = 'Clasificando imagen...';
                 statusMessage.style.color = '#4CAF50';
                 
-                // Mostrar la imagen
+                // Display the image
                 p.image(img, 0, 0, p.width, p.height);
                 
-                // Clasificar la imagen
+                // Classify the image
                 classifier.classify(img, gotResult);
             }
 
-            // Función callback que se ejecuta cuando finaliza la clasificación
+            // Callback function for when classification has finished
             function gotResult(error, results) {
                 if (error) {
                     console.error(error);
@@ -109,10 +109,10 @@ window.addEventListener('load', function() {
                     return;
                 }
                 
-                // Los resultados vienen en un arreglo ordenado por nivel de confianza
+                // The results are in an array ordered by confidence
                 console.log(results);
 
-                // Mostrar los resultados en el canvas
+                // Display the results on the canvas
                 p.fill(255);
                 p.stroke(0);
                 p.strokeWeight(2);
@@ -129,13 +129,13 @@ window.addEventListener('load', function() {
     });
 
     stopButton.addEventListener('click', function() {
-        // Eliminar la instancia de p5
+        // Remove the p5 instance
         if (p5Instance) {
             p5Instance.remove();
             p5Instance = null;
         }
         
-        // Ocultar el canvas y reiniciar la interfaz
+        // Hide canvas and reset UI
         sketchContainer.style.display = 'none';
         stopButton.style.display = 'none';
         startButton.style.display = 'inline-block';
@@ -150,17 +150,18 @@ window.addEventListener('load', function() {
 
 ### Código Completo
 
-// Inicializar el clasificador de imágenes con MobileNet
+```javascript
+// Initialize the Image Classifier method with MobileNet
 let classifier;
 
-// Variable para almacenar la imagen que se va a clasificar
+// A variable to hold the image we want to classify
 let img;
 
-// Variables para mostrar los resultados en el canvas
+// Variables for displaying the results on the canvas
 let label = "";
 let confidence = "";
 
-// Arreglo de imágenes disponibles
+// Array of available images
 const images = [
     "../data/images/image_classification/cheetah.png",
     "../data/images/image_classification/flamingo.png",
@@ -170,7 +171,7 @@ const images = [
 
 function preload() {
     classifier = ml5.imageClassifier("MobileNet");
-    // Seleccionar una imagen de forma aleatoria
+    // Randomly select one image
     const randomImage = images[Math.floor(Math.random() * images.length)];
     img = loadImage(randomImage);
 }
@@ -178,24 +179,24 @@ function preload() {
 function setup() {
     createCanvas(400, 400);
     
-    // Mostrar la imagen
+    // Display the image
     image(img, 0, 0, width, height);
     
-    // Clasificar la imagen
+    // Classify the image
     classifier.classify(img, gotResult);
 }
 
-// Función callback que se ejecuta cuando finaliza la clasificación
+// Callback function for when classification has finished
 function gotResult(error, results) {
     if (error) {
         console.error(error);
         return;
     }
     
-    // Los resultados vienen en un arreglo ordenado por nivel de confianza
+    // The results are in an array ordered by confidence
     console.log(results);
 
-    // Mostrar los resultados en el canvas
+    // Display the results on the canvas
     fill(255);
     stroke(0);
     strokeWeight(2);
@@ -205,7 +206,7 @@ function gotResult(error, results) {
     text(label, 10, 360);
     text(confidence, 10, 380);
 }
-
+```
 
 ### 1. Declaración de Variables
 
