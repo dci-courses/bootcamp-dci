@@ -3,7 +3,7 @@ format: html
 toc: false
 ---
 
-## 🧠 Entender qué significa implementar un clasificador
+## 🧠 Qué significa implementar un clasificador
 
 Entender qué significa implementar un clasificador es el segundo paso para comprender una funcionalidad de clasificación de imágenes como parte de un sistema de software. En esta etapa, el foco **no está en el entrenamiento ni en las matemáticas**, sino en entender **qué es un clasificador**, **qué decisiones implica** y **qué rol cumple dentro de la funcionalidad completa**.
 

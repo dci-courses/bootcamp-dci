@@ -1,4 +1,6 @@
-### 👋 Bienvenido al 🤖💻 Bootcamp de Implementación de Funcionalidades de Software basadas en Inteligencia Artificial
+### 👋 Bienvenido 
+
+#### 🤖💻 Bootcamp de Implementación de Funcionalidades de Software basadas en Inteligencia Artificial
 
 En este bootcamp aprenderás a **implementar funcionalidades de software que incorporan capacidades de IA**, integrándolas en aplicaciones reales. El foco está en **construir funcionalidades concretas**, no en entrenar modelos ni en estudiar teoría de inteligencia artificial.
 
