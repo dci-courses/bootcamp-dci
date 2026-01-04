@@ -1,0 +1,60 @@
+---
+format: html
+toc: false
+---
+
+## 📊 Analizar cómo se hacen predicciones usando el clasificador
+
+Analizar cómo se hacen predicciones usando el clasificador es el tercer paso para comprender una funcionalidad de clasificación de imágenes como parte de un sistema de software. En esta etapa, el foco está en observar **qué ocurre cuando el clasificador ya está implementado** y recibe nuevos datos como entrada.
+
+Para este análisis se utilizará un **clasificador de imágenes que ya forma parte del repositorio del curso**, ubicado en el siguiente archivo:
+
+`ml5/image_classification.qmd`
+
+El objetivo aquí no es estudiar su implementación interna, sino **observar su comportamiento** desde el punto de vista de la funcionalidad completa.
+
+### 🖼️ ¿Qué ocurre cuando entra una nueva imagen?
+
+Una vez que el clasificador existe, el sistema puede recibir una **imagen nueva**, es decir, una imagen que no formó parte de los ejemplos utilizados para construir el clasificador.
+
+Cuando esto ocurre, el sistema:
+
+- Recibe la imagen como **dato de entrada**
+- La procesa internamente como datos numéricos
+- La compara con los patrones aprendidos previamente
+- Produce una **predicción categórica**
+
+La predicción corresponde a la clase que el sistema considera **más similar** a la imagen de entrada.
+
+### 🔍 Cómo se genera una predicción
+
+El clasificador no analiza la imagen como lo haría una persona. En lugar de eso:
+
+- No identifica objetos ni significados
+- No “entiende” el contenido visual
+- Solo evalúa similitudes con ejemplos anteriores
+
+El resultado es una decisión que indica **a qué clase pertenece la imagen**, según los patrones aprendidos durante la construcción del clasificador.
+
+En muchos casos, el sistema también muestra información adicional asociada a la predicción, como el grado de confianza, lo que refuerza la idea de que la decisión es el resultado de una comparación entre varias posibilidades.
+
+### ⚠️ La predicción es una estimación
+
+Un aspecto clave de esta parte es entender que la predicción **no es una verdad absoluta**. El sistema:
+
+- No sabe cuál es la respuesta correcta
+- No puede garantizar que su decisión sea correcta
+- Produce una **estimación basada en experiencia previa**
+
+Por esta razón, el clasificador puede equivocarse, incluso cuando parece estar seguro de su predicción.
+
+### 🧩 Interpretar correctamente el resultado
+
+Al analizar las predicciones producidas por el clasificador, es importante tener en cuenta que:
+
+- El resultado depende de las clases definidas
+- El resultado depende de los ejemplos utilizados
+- Cambios en estos elementos pueden cambiar la predicción
+
+Esto permite entender por qué una misma imagen puede recibir predicciones distintas en contextos diferentes y refuerza la idea de que la predicción es una salida probabilística, no una afirmación definitiva sobre el contenido de la imagen.
+
