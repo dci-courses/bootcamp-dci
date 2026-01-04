@@ -1,16 +1,9 @@
 website:
   sidebar:
     contents:
-      - section: Reglas de Asociación
+      - section: Sesión 1
         contents:
-          - association-rules/00_ejemplo_1.1.ipynb
-          - association-rules/02_ejemplo_1.2.ipynb
-          - association-rules/03_ejercicio.ipynb
-      - section: Clasificación
-        contents:
-          - classification/classification_keylogger.ipynb
-          - classification/classification_ransomware.ipynb
-          - classification/classification_software_defects.ipynb
+          - sesion1/0_parte_0.qmd
       - section: ml5 + p5.js
         contents:
           - ml5/image_classification.qmd
