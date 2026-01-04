@@ -3,13 +3,24 @@ format: html
 toc: false
 ---
 
-## Comprender el problema de la predicciónn
+## Comprender el problema de la predicción
 
 Comprender el problema de la predicción es el primer paso para entender cualquier funcionalidad de software basada en inteligencia artificial, incluida la clasificación de imágenes. Antes de hablar de modelos, librerías o implementación, es fundamental aclarar qué significa que un sistema “prediga” algo.
 
-En el contexto del software, una **predicción** es un resultado que el sistema produce a partir de datos de entrada, utilizando patrones aprendidos previamente. El sistema no razona ni interpreta el mundo como una persona. Su comportamiento se limita a procesar datos y generar una salida siguiendo relaciones establecidas a partir de datos anteriores.
+En el contexto del software, una **predicción** puede entenderse como:
 
-A partir de esta definición general, es importante entender que existen **dos tipos básicos de predicciones** que aparecen de forma recurrente en sistemas de software: la **regresión** y la **clasificación**.
+- Un resultado producido por el sistema a partir de **datos de entrada**
+- Un resultado basado en **patrones aprendidos previamente**
+- Una **estimación**, no una certeza absoluta
+
+El sistema no razona ni interpreta el mundo como una persona. Su comportamiento se limita a procesar datos y generar una salida siguiendo relaciones establecidas a partir de datos anteriores.
+
+A partir de esta definición general, es importante entender que existen **dos tipos básicos de predicciones** que aparecen de forma recurrente en sistemas de software:
+
+- **Regresión**
+- **Clasificación**
+
+Distinguir entre ambos tipos es clave para entender qué tipo de problema resuelve la clasificación de imágenes.
 
 ## Regresión y clasificación
 
@@ -17,15 +28,39 @@ La siguiente figura ilustra la diferencia entre ambos tipos de predicción utili
 
 ![](figures/regresion_vs_clasificacion.png){fig-align="center" width="90%"}
 
-La **regresión** corresponde a predicciones cuyo resultado es un **valor numérico continuo**. Un ejemplo clásico es la **predicción de temperatura**. Si un sistema intenta estimar la temperatura de mañana, utiliza información histórica como temperaturas pasadas, estación del año o tendencias generales, y produce un valor como “22 grados”. El número exacto puede variar, pero siempre pertenece a un rango continuo de valores posibles. En este caso, el objetivo del sistema es aproximarse lo más posible al valor real.
+La **regresión** corresponde a predicciones cuyo resultado es un **valor numérico continuo**. Un ejemplo clásico es la **predicción de temperatura**. En este tipo de problema:
 
-La **clasificación**, en cambio, corresponde a predicciones cuyo resultado es una **categoría**. Un ejemplo simple es la predicción del estado del tiempo en términos como “bueno” o “malo”. El sistema no entrega un número, sino que decide a cuál de las categorías disponibles pertenece el caso observado. Aquí, el objetivo no es aproximar un valor, sino **asignar una clase**.
+- El sistema produce un número, como “22 grados”
+- El valor pertenece a un rango continuo de posibles resultados
+- El objetivo es aproximarse lo más posible al valor real
 
-Esta distinción es fundamental, porque la **clasificación de imágenes** pertenece claramente al segundo tipo. Cuando un sistema clasifica una imagen, no está midiendo algo continuo ni produciendo un valor numérico como salida principal. Está decidiendo **a qué clase pertenece esa imagen**, por ejemplo si corresponde a una categoría u otra.
+El número exacto puede variar, pero siempre representa una magnitud medible.
 
-Otro aspecto importante es entender que, tanto en regresión como en clasificación, una predicción **no es una verdad absoluta**. El sistema no “sabe” cuál es la respuesta correcta. Lo que hace es estimar el resultado más probable a partir de los datos disponibles y de los patrones que ha aprendido. Por esta razón, una predicción siempre puede ser incorrecta.
+La **clasificación**, en cambio, corresponde a predicciones cuyo resultado es una **categoría**. Un ejemplo simple es la predicción del estado del tiempo en términos como “bueno” o “malo”. En este caso:
 
-Este punto es especialmente relevante cuando se trabaja con imágenes. Para una persona, una imagen puede representar claramente un objeto o una situación. Para el computador, en cambio, una imagen es solo un conjunto de datos numéricos. La predicción que produce el sistema es una estimación basada en similitudes con ejemplos vistos anteriormente, no una comprensión visual en el sentido humano.
+- El sistema no entrega un número
+- La salida pertenece a un conjunto finito de clases posibles
+- El objetivo es **asignar una clase**, no aproximar un valor
+
+Esta distinción es fundamental, porque la **clasificación de imágenes** pertenece claramente a este segundo tipo. Cuando un sistema clasifica una imagen:
+
+- No mide algo continuo
+- No produce un valor numérico como salida principal
+- Decide **a qué clase pertenece la imagen**
+
+Otro aspecto importante es entender que, tanto en regresión como en clasificación, una predicción **no es una verdad absoluta**. El sistema no “sabe” cuál es la respuesta correcta. Lo que hace es:
+
+- Estimar el resultado más probable
+- Basarse en los datos disponibles
+- Utilizar patrones aprendidos previamente
+
+Por esta razón, una predicción siempre puede ser incorrecta.
+
+Este punto es especialmente relevante cuando se trabaja con imágenes. Para una persona, una imagen puede representar claramente un objeto o una situación. Para el computador, en cambio:
+
+- Una imagen es solo un conjunto de **datos numéricos**
+- No existe una comprensión visual en el sentido humano
+- La predicción se basa en similitudes con ejemplos vistos anteriormente
 
 En esta parte de la sesión, el objetivo es que los estudiantes comprendan que la predicción es el **problema central** que se intenta resolver, y que existen distintos tipos de predicción con objetivos distintos. La clasificación de imágenes es un caso particular de **predicción por clasificación**, y entender esta diferencia es esencial antes de avanzar hacia la implementación de un clasificador.
 
