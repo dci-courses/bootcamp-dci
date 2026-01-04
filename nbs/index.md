@@ -1,4 +1,4 @@
-## 👋 Bienvenido al 🤖💻 Bootcamp de Implementación de Funcionalidades de Software basadas en Inteligencia Artificial
+### 👋 Bienvenido al 🤖💻 Bootcamp de Implementación de Funcionalidades de Software basadas en Inteligencia Artificial
 
 En este bootcamp aprenderás a **implementar funcionalidades de software que incorporan capacidades de IA**, integrándolas en aplicaciones reales. El foco está en **construir funcionalidades concretas**, no en entrenar modelos ni en estudiar teoría de inteligencia artificial.
 
@@ -12,7 +12,7 @@ El material está organizado para que:
 
 ---
 
-## 🎯 ¿Qué puedes esperar de este bootcamp?
+#### 🎯 ¿Qué puedes esperar de este bootcamp?
 
 En este bootcamp aprenderás a:
 
@@ -26,7 +26,7 @@ El objetivo es que, al finalizar la tercera sesión, cuentes con una **pequeña 
 
 ---
 
-## 🖥️ Sesiones sincrónicas
+#### 🖥️ Sesiones sincrónicas
 
 Las **tres sesiones sincrónicas online** se realizarán a través de **Zoom**, utilizando el mismo enlace para todas las sesiones.
 
@@ -43,7 +43,7 @@ Esto es necesario para aprovechar el trabajo conjunto durante las sesiones onlin
 
 ---
 
-## 📅 ¿Cuál es el programa del bootcamp?
+#### 📅 ¿Cuál es el programa del bootcamp?
 
 | **Sesión y fecha** | **Tema** | **Descripción** |
 |---|---|---|
@@ -53,7 +53,7 @@ Esto es necesario para aprovechar el trabajo conjunto durante las sesiones onlin
 
 ---
 
-## 🧩 ¿Cuáles son los prerrequisitos?
+#### 🧩 ¿Cuáles son los prerrequisitos?
 
 Para seguir este bootcamp se espera que tengas:
 
@@ -69,7 +69,7 @@ No se asume conocimiento previo de:
 
 ---
 
-## 🛠️ ¿Qué herramientas necesito?
+#### 🛠️ ¿Qué herramientas necesito?
 
 Solo necesitas:
 
@@ -82,7 +82,7 @@ Solo necesitas:
 
 ---
 
-## 🚀 ¿Cómo aprovechar mejor el bootcamp?
+#### 🚀 ¿Cómo aprovechar mejor el bootcamp?
 
 Para sacar el máximo provecho:
 
@@ -96,6 +96,6 @@ Para sacar el máximo provecho:
 
 ---
 
-## 💰 Financiamiento
+#### 💰 Financiamiento
 
 Este bootcamp cuenta con financiamiento del **Proyecto ANID Ingeniería de Frontera hacia el 2030** y del **Fondo de Desarrollo Educativo UFRO**, como una experiencia piloto orientada al fortalecimiento de competencias técnicas en la articulación pregrado–posgrado.
