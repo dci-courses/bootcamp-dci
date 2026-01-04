@@ -1,0 +1,32 @@
+---
+format: html
+toc: false
+---
+
+## Comprender el problema de la predicción
+
+Comprender el problema de la predicción es el primer paso para entender cualquier funcionalidad de software basada en inteligencia artificial, incluida la clasificación de imágenes. Antes de hablar de modelos, librerías o implementación, es fundamental aclarar qué significa que un sistema “prediga” algo.
+
+En el contexto del software, una **predicción** es un resultado que el sistema produce a partir de datos de entrada, utilizando patrones aprendidos previamente. El sistema no razona ni interpreta el mundo como una persona. Su comportamiento se limita a procesar datos y generar una salida siguiendo relaciones establecidas a partir de datos anteriores.
+
+A partir de esta definición general, es importante entender que existen **dos tipos básicos de predicciones** que aparecen de forma recurrente en sistemas de software: la **regresión** y la **clasificación**.
+
+## Regresión y clasificación
+
+La siguiente figura ilustra la diferencia entre ambos tipos de predicción utilizando los ejemplos discutidos en el texto.
+
+![](figures/regresion_vs_clasificacion.png){fig-align="center" width="90%"}
+
+La **regresión** corresponde a predicciones cuyo resultado es un **valor numérico continuo**. Un ejemplo clásico es la **predicción de temperatura**. Si un sistema intenta estimar la temperatura de mañana, utiliza información histórica como temperaturas pasadas, estación del año o tendencias generales, y produce un valor como “22 grados”. El número exacto puede variar, pero siempre pertenece a un rango continuo de valores posibles. En este caso, el objetivo del sistema es aproximarse lo más posible al valor real.
+
+La **clasificación**, en cambio, corresponde a predicciones cuyo resultado es una **categoría**. Un ejemplo simple es la predicción del estado del tiempo en términos como “bueno” o “malo”. El sistema no entrega un número, sino que decide a cuál de las categorías disponibles pertenece el caso observado. Aquí, el objetivo no es aproximar un valor, sino **asignar una clase**.
+
+Esta distinción es fundamental, porque la **clasificación de imágenes** pertenece claramente al segundo tipo. Cuando un sistema clasifica una imagen, no está midiendo algo continuo ni produciendo un valor numérico como salida principal. Está decidiendo **a qué clase pertenece esa imagen**, por ejemplo si corresponde a una categoría u otra.
+
+Otro aspecto importante es entender que, tanto en regresión como en clasificación, una predicción **no es una verdad absoluta**. El sistema no “sabe” cuál es la respuesta correcta. Lo que hace es estimar el resultado más probable a partir de los datos disponibles y de los patrones que ha aprendido. Por esta razón, una predicción siempre puede ser incorrecta.
+
+Este punto es especialmente relevante cuando se trabaja con imágenes. Para una persona, una imagen puede representar claramente un objeto o una situación. Para el computador, en cambio, una imagen es solo un conjunto de datos numéricos. La predicción que produce el sistema es una estimación basada en similitudes con ejemplos vistos anteriormente, no una comprensión visual en el sentido humano.
+
+En esta parte de la sesión, el objetivo es que los estudiantes comprendan que la predicción es el **problema central** que se intenta resolver, y que existen distintos tipos de predicción con objetivos distintos. La clasificación de imágenes es un caso particular de **predicción por clasificación**, y entender esta diferencia es esencial antes de avanzar hacia la implementación de un clasificador.
+
+Esta comprensión servirá como base directa para la siguiente parte, donde se abordará qué significa implementar un clasificador como una funcionalidad concreta dentro de un sistema de software.
