@@ -3,23 +3,21 @@ title: "Clasificador de Imágenes"
 description: "Este es un modelo pre-entrenado que clasifica imágenes usando MobileNet para identificar objetos y escenas."
 format: html
 ---
-```
 
 Este modelo utiliza MobileNet, una red neuronal convolucional entrenada para clasificar imágenes en más de 1000 categorías diferentes. El clasificador puede identificar objetos comunes, animales, vehículos, alimentos y mucho más.
 
 **Instrucciones:**
 
-* 1. Haz clic en el botón "Iniciar Clasificador de Imágenes"
+- 1. Haz clic en el botón "Iniciar Clasificador de Imágenes"
 
-* 2. El modelo cargará y clasificará automáticamente la imagen de ejemplo
+- 2. El modelo cargará y clasificará automáticamente la imagen de ejemplo
 
-* 3. Verás la etiqueta y el porcentaje de confianza en la parte inferior
+- 3. Verás la etiqueta y el porcentaje de confianza en la parte inferior
 
 ::: {.callout-note}
 Este ejemplo usa una imagen predefinida. El modelo puede clasificar cualquier imagen en una de las 1000+ categorías que conoce.
 :::
 
-```html
 <div id="button-container" style="text-align: center; margin: 20px 0;">
   <button id="start-button" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">
     Iniciar Clasificador de Imágenes
@@ -85,7 +83,7 @@ window.addEventListener('load', function() {
 
             p.preload = function() {
                 classifier = ml5.imageClassifier("MobileNet");
-                // Seleccionar una imagen aleatoria
+                // Seleccionar una imagen de forma aleatoria
                 const randomImage = images[Math.floor(Math.random() * images.length)];
                 img = p.loadImage(randomImage);
             }
@@ -102,7 +100,7 @@ window.addEventListener('load', function() {
                 classifier.classify(img, gotResult);
             }
 
-            // Función callback que se ejecuta cuando termina la clasificación
+            // Función callback que se ejecuta cuando finaliza la clasificación
             function gotResult(error, results) {
                 if (error) {
                     console.error(error);
@@ -146,15 +144,12 @@ window.addEventListener('load', function() {
     });
 });
 </script>
-```
 
----
 
 ## Explicación del Código
 
 ### Código Completo
 
-```javascript
 // Inicializar el clasificador de imágenes con MobileNet
 let classifier;
 
@@ -175,7 +170,7 @@ const images = [
 
 function preload() {
     classifier = ml5.imageClassifier("MobileNet");
-    // Seleccionar una imagen aleatoria
+    // Seleccionar una imagen de forma aleatoria
     const randomImage = images[Math.floor(Math.random() * images.length)];
     img = loadImage(randomImage);
 }
@@ -190,7 +185,7 @@ function setup() {
     classifier.classify(img, gotResult);
 }
 
-// Función callback que se ejecuta cuando termina la clasificación
+// Función callback que se ejecuta cuando finaliza la clasificación
 function gotResult(error, results) {
     if (error) {
         console.error(error);
@@ -210,4 +205,95 @@ function gotResult(error, results) {
     text(label, 10, 360);
     text(confidence, 10, 380);
 }
+
+
+### 1. Declaración de Variables
+
+Primero, declaramos las variables que necesitaremos durante todo el proceso:
+
+```javascript
+let classifier;
+let img;
+let label = "";
+let confidence = "";
 ```
+
+- `classifier`: Almacenará el modelo MobileNet de ml5.js
+- `img`: Guardará la imagen que queremos clasificar
+- `label` y `confidence`: Contendrán los resultados de la clasificación
+
+### 2. Array de Imágenes Disponibles
+
+Definimos un array con las rutas de las imágenes que queremos clasificar:
+
+```javascript
+const images = [
+    "../data/images/image_classification/cheetah.png",
+    "../data/images/image_classification/flamingo.png",
+    "../data/images/image_classification/lion.png",
+    "../data/images/image_classification/panda.png"
+];
+```
+
+### 3. Carga del Modelo y la Imagen (preload)
+
+La función `preload()` se ejecuta antes de `setup()` y es ideal para cargar recursos:
+
+```javascript
+function preload() {
+    classifier = ml5.imageClassifier("MobileNet");
+    const randomImage = images[Math.floor(Math.random() * images.length)];
+    img = loadImage(randomImage);
+}
+```
+
+- `ml5.imageClassifier("MobileNet")`: Carga el modelo pre-entrenado MobileNet
+- `Math.floor(Math.random() * images.length)`: Selecciona un índice aleatorio del array
+- `loadImage()`: Carga la imagen seleccionada
+
+### 4. Configuración Inicial (setup)
+
+La función `setup()` se ejecuta una vez al inicio:
+
+```javascript
+function setup() {
+    createCanvas(400, 400);
+    image(img, 0, 0, width, height);
+    classifier.classify(img, gotResult);
+}
+```
+
+- `createCanvas(400, 400)`: Crea un lienzo de 400x400 píxeles
+- `image(img, 0, 0, width, height)`: Dibuja la imagen en el canvas
+- `classifier.classify(img, gotResult)`: Inicia la clasificación y llama a `gotResult` cuando termine
+
+### 5. Procesamiento de Resultados
+
+La función `gotResult` es un callback que recibe los resultados de la clasificación:
+
+```javascript
+function gotResult(error, results) {
+    if (error) {
+        console.error(error);
+        return;
+    }
+    
+    console.log(results);
+    
+    fill(255);
+    stroke(0);
+    strokeWeight(2);
+    textSize(18);
+    label = "Etiqueta: " + results[0].label;
+    confidence = "Confianza: " + nf(results[0].confidence, 0, 2);
+    text(label, 10, 360);
+    text(confidence, 10, 380);
+}
+```
+
+- `error`: Contiene información si algo salió mal
+- `results`: Array ordenado por confianza, donde `results[0]` es la predicción más probable
+- `results[0].label`: La etiqueta de la clasificación (ej: "panda")
+- `results[0].confidence`: Nivel de confianza entre 0 y 1
+- `nf()`: Formatea el número con 2 decimales
+  
