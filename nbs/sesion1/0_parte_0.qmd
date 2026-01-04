@@ -2,7 +2,7 @@
 format: html
 toc: true
 ---
-## Introducción
+## Sesión 1 – Comprender una funcionalidad de clasificación de imágenes
 
 La **Sesión 1** está dedicada a comprender qué es una **funcionalidad de software que clasifica imágenes**. El objetivo de esta sesión no es implementar código en una aplicación, sino construir una comprensión clara y ordenada del problema que se resolverá en las siguientes sesiones.
 
