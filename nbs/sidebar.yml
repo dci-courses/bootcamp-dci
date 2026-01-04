@@ -4,6 +4,7 @@ website:
       - section: Sesión 1
         contents:
           - sesion1/0_parte_0.qmd
+          - sesion1/1_parte_1.qmd
       - section: ml5 + p5.js
         contents:
           - ml5/image_classification.qmd
