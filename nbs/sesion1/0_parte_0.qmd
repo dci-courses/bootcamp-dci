@@ -4,7 +4,6 @@ format: html
 toc: true
 ---
 
-## Sesión 1 – Comprender una funcionalidad de clasificación de imágenes
 
 La **Sesión 1** está dedicada a comprender qué es una **funcionalidad de software que clasifica imágenes**. El objetivo de esta sesión no es implementar código en una aplicación, sino construir una comprensión clara y ordenada del problema que se resolverá en las siguientes sesiones.
 
@@ -15,21 +14,21 @@ Durante esta sesión utilizaremos **Teachable Machine** (https://teachablemachin
 ---
 
 ### 🔮 1. Comprender el problema de la predicción  
-(Ver contenido: `prediccion.md` — enlace dummy: https://example.com/prediccion)
+(enlace: https://example.com/prediccion)
 
 En esta primera parte se introduce el concepto de **predicción** desde una perspectiva de software. Se explica qué significa que un sistema produzca una predicción, qué tipo de resultados puede generar y por qué predecir no implica certeza, sino estimación. Se utilizan ejemplos simples, como la predicción de temperatura o la clasificación del estado del tiempo, para fijar estas ideas antes de trabajar con imágenes.
 
 ---
 
 ### 🧠 2. Entender qué significa implementar un clasificador  
-(Ver contenido: `clasificador.md` — enlace dummy: https://example.com/clasificador)
+(enlace: https://example.com/clasificador)
 
 En la segunda parte se aborda qué es un **clasificador** y qué implica implementarlo como una funcionalidad de software. Aquí se introduce el uso de **Teachable Machine** para crear un clasificador de imágenes sencillo, con el fin de observar qué datos se utilizan, qué clases se definen y cómo el sistema aprende a distinguir entre ellas. El foco está en comprender el rol del clasificador, no en los detalles técnicos de entrenamiento.
 
 ---
 
 ### 📊 3. Analizar cómo se hacen predicciones usando el clasificador  
-(Ver contenido: `predicciones.md` — enlace dummy: https://example.com/predicciones)
+(enlace: https://example.com/predicciones)
 
 En la tercera parte se analiza cómo se **utiliza un clasificador para producir predicciones**. Usando el clasificador construido con Teachable Machine, se observa qué ocurre cuando se introduce una nueva imagen, cómo se genera una predicción y cómo debe interpretarse el resultado. Se enfatiza que la predicción es una **estimación**, no una verdad absoluta.
 
