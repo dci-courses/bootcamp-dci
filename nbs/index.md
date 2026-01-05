@@ -12,9 +12,24 @@ El material está organizado para que:
 - **La implementes** paso a paso  
 - **La expliques y demuestres** al final del bootcamp  
 
-Este bootcamp aborda **los fundamentos necesarios para comprender cómo funcionan las funcionalidades de software basadas en inteligencia artificial**, independientemente de la herramienta o modelo específico que se utilice. Entender conceptos como **predicción**, **clasificación**, **flujo de datos**, **decisiones de diseño** y **comportamiento de una funcionalidad con IA** es clave para poder trabajar posteriormente con herramientas más avanzadas, como los **Large Language Models (LLMs)**, sistemas basados en **agentes**, o protocolos de integración como **MCP**. Muchas tecnologías actuales, como chatbots, asistentes de programación, sistemas de recomendación o herramientas de análisis automático, se apoyan en estos mismos principios, aunque los oculten detrás de interfaces más complejas.
+Este bootcamp aborda **los fundamentos necesarios para comprender cómo funcionan las funcionalidades de software basadas en inteligencia artificial**, independientemente de la herramienta o modelo específico que se utilice. Entender conceptos como **predicción**, **clasificación**, **flujo de datos**, **decisiones de diseño** y **comportamiento de una funcionalidad con IA** es clave para poder trabajar posteriormente con herramientas más avanzadas.
 
-Además, este es el **primero de una serie de bootcamps**. Los siguientes estarán orientados específicamente a **LLMs**, **MCP (Model Context Protocol)** y **técnicas de evaluación de sistemas basados en LLMs**, donde se retomarán y ampliarán las ideas trabajadas aquí. Por ello, este bootcamp cumple un rol formativo fundamental: **preparar el terreno** para comprender, implementar y evaluar funcionalidades más sofisticadas en etapas posteriores.
+En particular, estas ideas son la base para comprender y utilizar tecnologías actuales y emergentes como:
+
+- **Large Language Models (LLMs)**, utilizados en chatbots, asistentes de programación y sistemas de generación de contenido  
+- **Sistemas basados en agentes**, donde múltiples componentes interactúan para resolver tareas complejas  
+- **MCP (Model Context Protocol)**, para la integración estructurada de modelos en herramientas y flujos de trabajo  
+- **Técnicas de evaluación de LLMs**, orientadas a analizar calidad, confiabilidad y comportamiento de sistemas basados en modelos de lenguaje  
+
+Muchas de estas tecnologías reutilizan los mismos principios trabajados en este bootcamp, aunque los oculten detrás de interfaces más complejas.
+
+Este es el **primero de una serie de bootcamps**. Los siguientes estarán orientados específicamente a:
+
+- **LLMs, Agentes y su integración en aplicaciones de software**  
+- **MCP y arquitecturas de interacción con modelos** 
+- **Métodos y criterios para evaluar sistemas basados en LLMs**  
+
+Por ello, este bootcamp cumple un rol formativo fundamental: **preparar el terreno** para comprender, implementar y evaluar funcionalidades más sofisticadas en etapas posteriores.
 
 #### 🎯 ¿Qué puedes esperar de este bootcamp?
 
