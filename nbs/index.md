@@ -101,6 +101,7 @@ Este es el **primero de una serie de bootcamps**. Los siguientes estarán orient
 Este bootcamp cumple, por tanto, un rol formativo clave: **preparar el terreno conceptual y práctico** para abordar estas tecnologías con criterio técnico y no solo desde el uso superficial de herramientas.
 
 ---
+
 ### 📝 Inscripciones tardías (cupos adicionales)
 
 Debido al interés generado por el bootcamp, **hemos recibido varios mensajes solicitando cupos adicionales**. Por este motivo, y de manera excepcional, **estamos aceptando nuevas inscripciones tardías**, siempre que existan cupos disponibles.
@@ -111,7 +112,6 @@ Si no alcanzaste a inscribirte en el período inicial, puedes hacerlo directamen
 [Completar formulario de inscripción](https://docs.google.com/forms/d/e/1FAIpQLSfYbyWX0aOn5OJ9PkTNY1Z2T5UhX0p43iTKi-dGUP-cfptEug/viewform?usp=header)
 
 Las inscripciones se cerrarán automáticamente una vez completados los cupos adicionales.
-
 
 ---
 
