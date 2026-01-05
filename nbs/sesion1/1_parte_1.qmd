@@ -3,7 +3,7 @@ format: html
 toc: false
 ---
 
-## El problema de la predicción
+## 🔮 El problema de la predicción
 
 Comprender el problema de la predicción es el primer paso para entender cualquier funcionalidad de software basada en inteligencia artificial, incluida la clasificación de imágenes. Antes de hablar de modelos, librerías o implementación, es fundamental aclarar qué significa que un sistema “prediga” algo.
 
@@ -17,10 +17,9 @@ En el contexto del software, una **predicción** puede entenderse como:
 El sistema no razona ni interpreta el mundo como una persona. Su comportamiento se limita a procesar datos y generar una salida siguiendo relaciones establecidas a partir de datos anteriores.
 :::
 
-
 Esta idea suele ser difícil de comprender al comienzo, porque tendemos a atribuirle al sistema una forma de razonamiento similar a la humana. Una analogía útil es pensar en una persona que **aprende por repetición**, no por comprensión explícita.
 
-Por ejemplo, imagina a alguien que nunca ha estudiado meteorología, pero que durante años ha observado el clima todos los días. Esa persona no sabe explicar científicamente por qué llueve ni cómo funcionan los fenómenos atmosféricos, pero después de ver muchas veces el cielo, la temperatura y el viento, es capaz de decir “hoy probablemente va a llover”. Esa predicción no se basa en entender el fenómeno, sino en **reconocer patrones que ha visto antes**.
+Por ejemplo, imagina a alguien que nunca ha estudiado meteorología, pero que durante años ha observado el clima todos los días. Esa persona no sabe explicar científicamente por qué llueve ni cómo funcionan los fenómenos atmoséricos, pero después de ver muchas veces el cielo, la temperatura y el viento, es capaz de decir “hoy probablemente va a llover”. Esa predicción no se basa en entender el fenómeno, sino en **reconocer patrones que ha visto antes**.
 
 Un sistema de software basado en inteligencia artificial funciona de manera muy similar. No entiende qué es la lluvia, el calor o el buen tiempo. Lo único que hace es observar datos, identificar regularidades y, cuando recibe un nuevo conjunto de datos, producir un resultado que se parece a los casos anteriores. La predicción es, por tanto, una **respuesta basada en experiencia acumulada**, no en comprensión del mundo.
 
@@ -33,7 +32,7 @@ A partir de esta definición general, es importante entender que existen **dos t
 
 Distinguir entre ambos tipos es clave para entender qué tipo de problema resuelve la clasificación de imágenes.
 
-## Regresión y clasificación
+## 📈 Regresión y clasificación
 
 La siguiente figura ilustra la diferencia entre ambos tipos de predicción utilizando los ejemplos discutidos en el texto.
 
