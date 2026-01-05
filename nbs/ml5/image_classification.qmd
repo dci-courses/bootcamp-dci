@@ -1,26 +1,26 @@
 ---
-title: "Clasificador de Imágenes"
-description: "Este es un modelo pre-entrenado que clasifica imágenes usando MobileNet para identificar objetos y escenas."
+title: "Clasificador de Video"
+description: "Este es un modelo entrenado en Teachable Machine que clasifica imágenes en tiempo real usando la cámara."
 format: html
 ---
 
-Este modelo utiliza MobileNet, una red neuronal convolucional entrenada para clasificar imágenes en más de 1000 categorías diferentes. El clasificador puede identificar objetos comunes, animales, vehículos, alimentos y mucho más.
+Este modelo utiliza un clasificador entrenado en Teachable Machine para analizar imágenes capturadas desde una cámara web en tiempo real. El clasificador puede identificar patrones visuales definidos durante el entrenamiento del modelo y producir una predicción continua a partir del video.
 
 **Instrucciones:**
 
-- 1. Haz clic en el botón "Iniciar Clasificador de Imágenes"
+- 1. Haz clic en el botón "Iniciar Clasificador de Video"
 
-- 2. El modelo cargará y clasificará automáticamente la imagen de ejemplo
+- 2. Permite el acceso a la cámara cuando el navegador lo solicite
 
-- 3. Verás la etiqueta y el porcentaje de confianza en la parte inferior
+- 3. Verás la etiqueta detectada y un emoji que representa la predicción actual
 
 ::: {.callout-note}
-Este ejemplo usa una imagen predefinida. El modelo puede clasificar cualquier imagen en una de las 1000+ categorías que conoce.
+Este ejemplo usa video en tiempo real como entrada. El modelo puede clasificar continuamente los frames capturados por la cámara web.
 :::
 
 <div id="button-container" style="text-align: center; margin: 20px 0;">
   <button id="start-button" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">
-    Iniciar Clasificador de Imágenes
+    Iniciar Clasificador de Video
   </button>
   <button id="stop-button" style="display: none; padding: 12px 24px; font-size: 16px; background-color: #f44336; color: white; border: none; border-radius: 4px; cursor: pointer;">
     Cerrar Clasificador
@@ -38,7 +38,6 @@ Este ejemplo usa una imagen predefinida. El modelo puede clasificar cualquier im
 <script>
 // Esperar a que ml5 esté completamente cargado
 window.addEventListener('load', function() {
-    // Comprobación adicional para asegurar que ml5 está disponible
     if (typeof ml5 === 'undefined') {
         console.error('ml5 no está cargado');
         return;
@@ -53,89 +52,84 @@ window.addEventListener('load', function() {
 
     startButton.addEventListener('click', function() {
         if (sketchStarted) return;
-        
+
         sketchStarted = true;
         startButton.style.display = 'none';
         stopButton.style.display = 'inline-block';
         statusMessage.textContent = 'Cargando modelo...';
-        
-        // Mostrar el contenedor del canvas
         sketchContainer.style.display = 'block';
 
         const sketch = (p) => {
-            // Inicializar el método Image Classifier con MobileNet
+            // Inicializar el clasificador de imágenes
             let classifier;
 
-            // Variable para almacenar la imagen que se va a clasificar
-            let img;
+            // Video capturado desde la cámara
+            let video;
 
-            // Variables para mostrar los resultados en el canvas
+            // Etiqueta detectada
             let label = "";
-            let confidence = "";
 
-            // Arreglo de imágenes disponibles
-            const images = [
-                "../data/images/image_classification/cheetah.png",
-                "../data/images/image_classification/flamingo.png",
-                "../data/images/image_classification/lion.png",
-                "../data/images/image_classification/panda.png"
-            ];
+            // URL del modelo entrenado en Teachable Machine
+            const modelURL = "https://teachablemachine.withgoogle.com/models/bXy2kDNi/";
 
             p.preload = function() {
-                classifier = ml5.imageClassifier("MobileNet");
-                // Seleccionar una imagen de forma aleatoria
-                const randomImage = images[Math.floor(Math.random() * images.length)];
-                img = p.loadImage(randomImage);
+                classifier = ml5.imageClassifier(modelURL);
             }
 
             p.setup = function() {
-                p.createCanvas(400, 400);
-                statusMessage.textContent = 'Clasificando imagen...';
+                p.createCanvas(640, 520);
+                statusMessage.textContent = 'Clasificando video...';
                 statusMessage.style.color = '#4CAF50';
-                
-                // Mostrar la imagen
-                p.image(img, 0, 0, p.width, p.height);
-                
-                // Clasificar la imagen
-                classifier.classify(img, gotResult);
+
+                video = p.createCapture(p.VIDEO);
+                video.hide();
+
+                classifier.classify(video, gotResult);
             }
 
-            // Función callback que se ejecuta cuando finaliza la clasificación
             function gotResult(error, results) {
                 if (error) {
                     console.error(error);
-                    statusMessage.textContent = 'Error al clasificar la imagen';
+                    statusMessage.textContent = 'Error al clasificar el video';
                     statusMessage.style.color = '#f44336';
                     return;
                 }
-                
-                // Los resultados vienen en un arreglo ordenado por nivel de confianza
-                console.log(results);
 
-                // Mostrar los resultados en el canvas
+                label = results[0].label;
+                classifier.classify(video, gotResult);
+            }
+
+            p.draw = function() {
+                p.image(video, 0, 0, p.width, p.height);
+
                 p.fill(255);
                 p.stroke(0);
                 p.strokeWeight(2);
                 p.textSize(18);
-                label = "Etiqueta: " + results[0].label;
-                confidence = "Confianza: " + p.nf(results[0].confidence, 0, 2);
-                p.text(label, 10, 360);
-                p.text(confidence, 10, 380);
-                
-                statusMessage.textContent = '¡Clasificación completada!';
+                p.text("Etiqueta: " + label, 10, p.height - 20);
+
+                let emoji = "🫷";
+                if (label === "nighttime") {
+                    emoji = "☽";
+                } else if (label === "daytime") {
+                    emoji = "🌞";
+                }
+
+                p.textSize(200);
+                p.textAlign(p.CENTER, p.CENTER);
+                p.text(emoji, p.width / 2, p.height / 2);
             }
-        }; 
+        };
+
         p5Instance = new p5(sketch, 'canvas-container');
     });
 
     stopButton.addEventListener('click', function() {
-        // Eliminar la instancia de p5
         if (p5Instance) {
             p5Instance.remove();
             p5Instance = null;
         }
-        
-        // Ocultar el canvas y reiniciar la interfaz
+
         sketchContainer.style.display = 'none';
         stopButton.style.display = 'none';
         startButton.style.display = 'inline-block';
@@ -145,68 +139,45 @@ window.addEventListener('load', function() {
 });
 </script>
 
-
 ## Explicación del Código
 
 ### Código Completo
 
 ```javascript
-// Inicializar el clasificador de imágenes con MobileNet
 let classifier;
-
-// Variable para almacenar la imagen que se va a clasificar
-let img;
-
-// Variables para mostrar los resultados en el canvas
+let video;
 let label = "";
-let confidence = "";
-
-// Array de imágenes disponibles
-const images = [
-    "../data/images/image_classification/cheetah.png",
-    "../data/images/image_classification/flamingo.png",
-    "../data/images/image_classification/lion.png",
-    "../data/images/image_classification/panda.png"
-];
+const modelURL = "https://teachablemachine.withgoogle.com/models/bXy2kDNi/";
 
 function preload() {
-    classifier = ml5.imageClassifier("MobileNet");
-    // Seleccionar una imagen de forma aleatoria
-    const randomImage = images[Math.floor(Math.random() * images.length)];
-    img = loadImage(randomImage);
+    classifier = ml5.imageClassifier(modelURL);
 }
 
 function setup() {
-    createCanvas(400, 400);
-    
-    // Mostrar la imagen
-    image(img, 0, 0, width, height);
-    
-    // Clasificar la imagen
-    classifier.classify(img, gotResult);
+    createCanvas(640, 520);
+    video = createCapture(VIDEO);
+    video.hide();
+    classifier.classify(video, gotResult);
 }
 
-// Función callback que se ejecuta cuando finaliza la clasificación
 function gotResult(error, results) {
     if (error) {
         console.error(error);
         return;
     }
-    
-    // Los resultados vienen en un arreglo ordenado por nivel de confianza
-    console.log(results);
+    label = results[0].label;
+    classifier.classify(video, gotResult);
+}
 
-    // Mostrar los resultados en el canvas
+function draw() {
+    image(video, 0, 0, width, height);
     fill(255);
     stroke(0);
     strokeWeight(2);
     textSize(18);
-    label = "Etiqueta: " + results[0].label;
-    confidence = "Confianza: " + nf(results[0].confidence, 0, 2);
-    text(label, 10, 360);
-    text(confidence, 10, 380);
+    text("Etiqueta: " + label, 10, height - 20);
 }
-```
+````
 
 ### 1. Declaración de Variables
 
@@ -214,61 +185,44 @@ Primero, declaramos las variables que necesitaremos durante todo el proceso:
 
 ```javascript
 let classifier;
-let img;
+let video;
 let label = "";
-let confidence = "";
 ```
 
-- `classifier`: Almacenará el modelo MobileNet de ml5.js
-- `img`: Guardará la imagen que queremos clasificar
-- `label` y `confidence`: Contendrán los resultados de la clasificación
+* `classifier`: Almacenará el modelo entrenado en Teachable Machine
+* `video`: Guardará el video capturado desde la cámara
+* `label`: Contendrá el resultado de la clasificación
 
-### 2. Array de Imágenes Disponibles
-
-Definimos un array con las rutas de las imágenes que queremos clasificar:
-
-```javascript
-const images = [
-    "../data/images/image_classification/cheetah.png",
-    "../data/images/image_classification/flamingo.png",
-    "../data/images/image_classification/lion.png",
-    "../data/images/image_classification/panda.png"
-];
-```
-
-### 3. Carga del Modelo y la Imagen (preload)
+### 2. Carga del Modelo (preload)
 
 La función `preload()` se ejecuta antes de `setup()` y es ideal para cargar recursos:
 
 ```javascript
 function preload() {
-    classifier = ml5.imageClassifier("MobileNet");
-    const randomImage = images[Math.floor(Math.random() * images.length)];
-    img = loadImage(randomImage);
+    classifier = ml5.imageClassifier(modelURL);
 }
 ```
 
-- `ml5.imageClassifier("MobileNet")`: Carga el modelo pre-entrenado MobileNet
-- `Math.floor(Math.random() * images.length)`: Selecciona un índice aleatorio del array
-- `loadImage()`: Carga la imagen seleccionada
+* `ml5.imageClassifier(modelURL)`: Carga el modelo entrenado en Teachable Machine
 
-### 4. Configuración Inicial (setup)
+### 3. Configuración Inicial (setup)
 
 La función `setup()` se ejecuta una vez al inicio:
 
 ```javascript
 function setup() {
-    createCanvas(400, 400);
-    image(img, 0, 0, width, height);
-    classifier.classify(img, gotResult);
+    createCanvas(640, 520);
+    video = createCapture(VIDEO);
+    video.hide();
+    classifier.classify(video, gotResult);
 }
 ```
 
-- `createCanvas(400, 400)`: Crea un lienzo de 400x400 píxeles
-- `image(img, 0, 0, width, height)`: Dibuja la imagen en el canvas
-- `classifier.classify(img, gotResult)`: Inicia la clasificación y llama a `gotResult` cuando termine
+* `createCanvas(640, 520)`: Crea un lienzo para mostrar el video
+* `createCapture(VIDEO)`: Activa la cámara
+* `classifier.classify(video, gotResult)`: Inicia la clasificación del video
 
-### 5. Procesamiento de Resultados
+### 4. Procesamiento de Resultados
 
 La función `gotResult` es un callback que recibe los resultados de la clasificación:
 
@@ -278,23 +232,13 @@ function gotResult(error, results) {
         console.error(error);
         return;
     }
-    
-    console.log(results);
-    
-    fill(255);
-    stroke(0);
-    strokeWeight(2);
-    textSize(18);
-    label = "Etiqueta: " + results[0].label;
-    confidence = "Confianza: " + nf(results[0].confidence, 0, 2);
-    text(label, 10, 360);
-    text(confidence, 10, 380);
+    label = results[0].label;
+    classifier.classify(video, gotResult);
 }
 ```
 
-- `error`: Contiene información si algo salió mal
-- `results`: Array ordenado por confianza, donde `results[0]` es la predicción más probable
-- `results[0].label`: La etiqueta de la clasificación (ej: "panda")
-- `results[0].confidence`: Nivel de confianza entre 0 y 1
-- `nf()`: Formatea el número con 2 decimales
-  
+* `results[0].label`: Etiqueta más probable detectada por el modelo
+* La clasificación se repite de forma continua
+
+
+ 

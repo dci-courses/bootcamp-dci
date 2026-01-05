@@ -1,113 +1,241 @@
 ---
-title: " 📹 Clasificador de Video en Tiempo Real"
-description: "Funcionalidad de software que clasifica imágenes capturadas desde una cámara usando un modelo entrenado en Teachable Machine."
+title: "Clasificador de Video"
+description: "Este es un modelo entrenado en Teachable Machine que clasifica imágenes en tiempo real usando la cámara."
 format: html
 ---
 
-## 📹 Clasificador de Video en Tiempo Real
-
-Este sistema implementa una **funcionalidad de software que clasifica imágenes capturadas desde una cámara en tiempo real**.  
-El clasificador utiliza un **modelo previamente entrenado en Teachable Machine**, diseñado para reconocer patrones visuales específicos a partir del video de entrada.
-
-El sistema analiza continuamente los frames del video y **actualiza su predicción de forma automática**, mostrando una etiqueta textual y una representación visual asociada.
+Este modelo utiliza un clasificador entrenado en Teachable Machine para analizar imágenes capturadas desde una cámara web en tiempo real. El clasificador puede identificar patrones visuales definidos durante el entrenamiento del modelo y producir una predicción continua a partir del video.
 
 **Instrucciones:**
 
-- 1. Permite el acceso a la cámara cuando el navegador lo solicite  
-- 2. El sistema comenzará a clasificar automáticamente el video capturado  
-- 3. Observa la etiqueta detectada y el emoji mostrado en pantalla  
+- 1. Haz clic en el botón "Iniciar Clasificador de Video"
+
+- 2. Permite el acceso a la cámara cuando el navegador lo solicite
+
+- 3. Verás la etiqueta detectada y un emoji que representa la predicción actual
 
 ::: {.callout-note}
-Este ejemplo utiliza un modelo entrenado externamente. El sistema clasifica cada frame del video capturado por la cámara web.
+Este ejemplo usa video en tiempo real como entrada. El modelo puede clasificar continuamente los frames capturados por la cámara web.
 :::
 
-<div id="p5-sketch" style="text-align: center; margin-top: 20px;"></div>
+<div id="button-container" style="text-align: center; margin: 20px 0;">
+  <button id="start-button" style="padding: 12px 24px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">
+    Iniciar Clasificador de Video
+  </button>
+  <button id="stop-button" style="display: none; padding: 12px 24px; font-size: 16px; background-color: #f44336; color: white; border: none; border-radius: 4px; cursor: pointer;">
+    Cerrar Clasificador
+  </button>
+  <p id="status-message" style="margin-top: 10px; font-style: italic; color: #666;"></p>
+</div>
+
+<div id="p5-sketch" style="display: none; text-align: center;">
+  <div id="canvas-container" style="display: inline-block;"></div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/p5@1.11.7/lib/p5.js"></script>
 <script src="https://unpkg.com/ml5@0.12.2/dist/ml5.min.js"></script>
 
 <script>
-// Video capturado desde la cámara
-let video;
+// Esperar a que ml5 esté completamente cargado
+window.addEventListener('load', function() {
+    if (typeof ml5 === 'undefined') {
+        console.error('ml5 no está cargado');
+        return;
+    }
 
-// Clasificador de imágenes
-let classifier;
+    const startButton = document.getElementById('start-button');
+    const stopButton = document.getElementById('stop-button');
+    const statusMessage = document.getElementById('status-message');
+    const sketchContainer = document.getElementById('p5-sketch');
+    let sketchStarted = false;
+    let p5Instance = null;
 
-// URL del modelo entrenado en Teachable Machine
-let modelLoaded = 'https://teachablemachine.withgoogle.com/models/bXy2kDNi/';
+    startButton.addEventListener('click', function() {
+        if (sketchStarted) return;
 
-// Etiqueta predicha por el modelo
-let label = 'esperando...';
+        sketchStarted = true;
+        startButton.style.display = 'none';
+        stopButton.style.display = 'inline-block';
+        statusMessage.textContent = 'Cargando modelo...';
+        sketchContainer.style.display = 'block';
 
-// PASO 1: Cargar el modelo
-function preload() {
-  classifier = ml5.imageClassifier(modelLoaded);
-}
+        const sketch = (p) => {
+            // Inicializar el clasificador de imágenes
+            let classifier;
 
-function setup() {
-  // Crear el lienzo
-  let canvas = createCanvas(640, 520);
-  canvas.parent("p5-sketch");
+            // Video capturado desde la cámara
+            let video;
 
-  // Crear el video desde la cámara
-  video = createCapture(VIDEO);
-  video.hide();
+            // Etiqueta detectada
+            let label = "";
 
-  // PASO 2: Comenzar la clasificación
-  clasificarVideo();
-}
+            // URL del modelo entrenado en Teachable Machine
+            const modelURL = "https://teachablemachine.withgoogle.com/models/bXy2kDNi/";
 
-// PASO 2: Clasificar el video
-function clasificarVideo() {
-  classifier.classify(video, obtenerResultados);
-}
+            p.preload = function() {
+                classifier = ml5.imageClassifier(modelURL);
+            }
 
-function draw() {
-  // Dibujar el video en el lienzo
-  image(video, 0, 0);
+            p.setup = function() {
+                p.createCanvas(640, 520);
+                statusMessage.textContent = 'Clasificando video...';
+                statusMessage.style.color = '#4CAF50';
 
-  // Dibujar la etiqueta detectada
-  textSize(30);
-  textAlign(CENTER, CENTER);
-  fill(255);
-  text(label, width / 2, height - 16);
+                video = p.createCapture(p.VIDEO);
+                video.hide();
 
-  // Emoji por defecto
-  let emoji = "🫷";
+                classifier.classify(video, gotResult);
+            }
 
-  // Seleccionar el emoji según la etiqueta
-  if (label == "nighttime") {
-    emoji = "☽";
-  } else if (label == "daytime") {
-    emoji = "🌞";
-  }
+            function gotResult(error, results) {
+                if (error) {
+                    console.error(error);
+                    statusMessage.textContent = 'Error al clasificar el video';
+                    statusMessage.style.color = '#f44336';
+                    return;
+                }
 
-  // Dibujar el emoji
-  textSize(256);
-  text(emoji, width / 2, height / 2);
-}
+                label = results[0].label;
+                classifier.classify(video, gotResult);
+            }
 
-// PASO 3: Obtener el resultado de la clasificación
-function obtenerResultados(error, results) {
-  // Verificar si ocurrió un error
-  if (error) {
-    console.error(error);
-    return;
-  }
+            p.draw = function() {
+                p.image(video, 0, 0, p.width, p.height);
 
-  // Actualizar la etiqueta con el resultado más probable
-  label = results[0].label;
-}
+                p.fill(255);
+                p.stroke(0);
+                p.strokeWeight(2);
+                p.textSize(18);
+                p.text("Etiqueta: " + label, 10, p.height - 20);
+
+                let emoji = "🫷";
+                if (label === "nighttime") {
+                    emoji = "☽";
+                } else if (label === "daytime") {
+                    emoji = "🌞";
+                }
+
+                p.textSize(200);
+                p.textAlign(p.CENTER, p.CENTER);
+                p.text(emoji, p.width / 2, p.height / 2);
+            }
+        };
+
+        p5Instance = new p5(sketch, 'canvas-container');
+    });
+
+    stopButton.addEventListener('click', function() {
+        if (p5Instance) {
+            p5Instance.remove();
+            p5Instance = null;
+        }
+
+        sketchContainer.style.display = 'none';
+        stopButton.style.display = 'none';
+        startButton.style.display = 'inline-block';
+        statusMessage.textContent = '';
+        sketchStarted = false;
+    });
+});
 </script>
 
 ## Explicación del Código
 
-### 1. Declaración de Variables
-
-Se definen las variables que controlan el comportamiento del sistema:
+### Código Completo
 
 ```javascript
-let video;
 let classifier;
-let modelLoaded = 'https://teachablemachine.withgoogle.com/models/bXy2kDNi/';
-let label = 'esperando...';
+let video;
+let label = "";
+const modelURL = "https://teachablemachine.withgoogle.com/models/bXy2kDNi/";
+
+function preload() {
+    classifier = ml5.imageClassifier(modelURL);
+}
+
+function setup() {
+    createCanvas(640, 520);
+    video = createCapture(VIDEO);
+    video.hide();
+    classifier.classify(video, gotResult);
+}
+
+function gotResult(error, results) {
+    if (error) {
+        console.error(error);
+        return;
+    }
+    label = results[0].label;
+    classifier.classify(video, gotResult);
+}
+
+function draw() {
+    image(video, 0, 0, width, height);
+    fill(255);
+    stroke(0);
+    strokeWeight(2);
+    textSize(18);
+    text("Etiqueta: " + label, 10, height - 20);
+}
+````
+
+### 1. Declaración de Variables
+
+Primero, declaramos las variables que necesitaremos durante todo el proceso:
+
+```javascript
+let classifier;
+let video;
+let label = "";
+```
+
+* `classifier`: Almacenará el modelo entrenado en Teachable Machine
+* `video`: Guardará el video capturado desde la cámara
+* `label`: Contendrá el resultado de la clasificación
+
+### 2. Carga del Modelo (preload)
+
+La función `preload()` se ejecuta antes de `setup()` y es ideal para cargar recursos:
+
+```javascript
+function preload() {
+    classifier = ml5.imageClassifier(modelURL);
+}
+```
+
+* `ml5.imageClassifier(modelURL)`: Carga el modelo entrenado en Teachable Machine
+
+### 3. Configuración Inicial (setup)
+
+La función `setup()` se ejecuta una vez al inicio:
+
+```javascript
+function setup() {
+    createCanvas(640, 520);
+    video = createCapture(VIDEO);
+    video.hide();
+    classifier.classify(video, gotResult);
+}
+```
+
+* `createCanvas(640, 520)`: Crea un lienzo para mostrar el video
+* `createCapture(VIDEO)`: Activa la cámara
+* `classifier.classify(video, gotResult)`: Inicia la clasificación del video
+
+### 4. Procesamiento de Resultados
+
+La función `gotResult` es un callback que recibe los resultados de la clasificación:
+
+```javascript
+function gotResult(error, results) {
+    if (error) {
+        console.error(error);
+        return;
+    }
+    label = results[0].label;
+    classifier.classify(video, gotResult);
+}
+```
+
+* `results[0].label`: Etiqueta más probable detectada por el modelo
+* La clasificación se repite de forma continua
