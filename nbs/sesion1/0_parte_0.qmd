@@ -9,7 +9,12 @@ toc: true
 La **Sesión 1** está dedicada a comprender qué es una **funcionalidad de software que clasifica imágenes**. El objetivo de esta sesión no es implementar código en una aplicación, sino construir una comprensión clara y ordenada del problema que se resolverá en las siguientes sesiones.
 :::
 
-Para llegar a la clasificación de imágenes **haremos tres cosas**: **comprenderemos el problema de la predicción**, **entenderemos qué significa implementar un clasificador**, y **analizaremos cómo se hacen predicciones usando ese clasificador**.  
+Para llegar a la clasificación de imágenes haremos tres cosas:
+
+1. **Comprenderemos el problema de la predicción**
+2. **Entenderemos qué significa implementar un clasificador**
+3. **Analizaremos cómo se hacen predicciones usando ese clasificador**
+
 Durante esta sesión utilizaremos **Teachable Machine** (https://teachablemachine.withgoogle.com/) como herramienta de apoyo. Teachable Machine permite **construir y probar clasificadores de imágenes de forma visual**, sin necesidad de programar, lo que facilita concentrarse en los conceptos de predicción y clasificación antes de llevarlos a una implementación en código.
 
 ---
