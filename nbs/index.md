@@ -97,7 +97,7 @@ Para sacar el máximo provecho:
 ---
 
 
-### 🔗 Continuidad del programa de bootcamps
+#### 🔗 Continuidad del programa de bootcamps
 [Ir a la sección](roadmap.qmd)
 
 Este es el **primero de una serie de bootcamps**. Los siguientes estarán orientados específicamente a:
