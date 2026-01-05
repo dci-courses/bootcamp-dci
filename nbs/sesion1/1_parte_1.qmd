@@ -5,7 +5,10 @@ toc: false
 
 ## 🔮 El problema de la predicción
 
+
+::: {.callout-tip title="Idea clave"}
 Comprender el problema de la predicción es el primer paso para entender cualquier funcionalidad de software basada en inteligencia artificial, incluida la clasificación de imágenes. Antes de hablar de modelos, librerías o implementación, es fundamental aclarar qué significa que un sistema “prediga” algo.
+:::
 
 En el contexto del software, una **predicción** puede entenderse como:
 
@@ -13,9 +16,9 @@ En el contexto del software, una **predicción** puede entenderse como:
 - Un resultado basado en **patrones aprendidos previamente**
 - Una **estimación**, no una certeza absoluta
 
-::: {.callout-note title="Idea clave"}
+
 El sistema no razona ni interpreta el mundo como una persona. Su comportamiento se limita a procesar datos y generar una salida siguiendo relaciones establecidas a partir de datos anteriores.
-:::
+
 
 Esta idea suele ser difícil de comprender al comienzo, porque tendemos a atribuirle al sistema una forma de razonamiento similar a la humana. Una analogía útil es pensar en una persona que **aprende por repetición**, no por comprensión explícita.
 
