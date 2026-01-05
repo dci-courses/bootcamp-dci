@@ -5,7 +5,9 @@ toc: false
 
 ## 🧠 Qué significa implementar un clasificador
 
+::: {.callout-important title="Idea clave"}
 Entender qué significa implementar un clasificador es el segundo paso para comprender una funcionalidad de clasificación de imágenes como parte de un sistema de software. En esta etapa, el foco **no está en el entrenamiento ni en las matemáticas**, sino en entender **qué es un clasificador**, **qué decisiones implica** y **qué rol cumple dentro de la funcionalidad completa**.
+:::
 
 ### 🧩 ¿Qué es un clasificador?
 
@@ -83,4 +85,3 @@ Implementar un clasificador **no garantiza resultados correctos**. El sistema pu
 - Las clases se parecen demasiado entre sí  
 
 Esto muestra que la calidad del clasificador depende directamente de las **decisiones de diseño** tomadas durante su implementación.
-

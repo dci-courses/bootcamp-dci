@@ -5,7 +5,9 @@ toc: false
 
 ## 📊 Analizar cómo se hacen predicciones usando el clasificador
 
+::: {.callout-important title="Idea clave"}
 Analizar cómo se hacen predicciones usando el clasificador es el tercer paso para comprender una funcionalidad de clasificación de imágenes como parte de un sistema de software. En esta etapa, el foco está en observar **qué ocurre cuando el clasificador ya está implementado** y recibe nuevos datos como entrada.
+:::
 
 Para este análisis se utilizará un **clasificador de imágenes que ya forma parte del repositorio del curso**, ubicado en el siguiente archivo:
 
@@ -57,4 +59,3 @@ Al analizar las predicciones producidas por el clasificador, es importante tener
 - Cambios en estos elementos pueden cambiar la predicción
 
 Esto permite entender por qué una misma imagen puede recibir predicciones distintas en contextos diferentes y refuerza la idea de que la predicción es una salida probabilística, no una afirmación definitiva sobre el contenido de la imagen.
-
