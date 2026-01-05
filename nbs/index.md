@@ -21,33 +21,6 @@ En esta sección se presenta el enfoque general del bootcamp y qué significa im
 
 ---
 
-### 🤖 ¿Por qué este bootcamp es base para LLMs, agentes y MCP?
-[Ir a la sección](intro_llms.qmd)
-
-Los conceptos trabajados en este bootcamp son **fundamentales para comprender herramientas y tecnologías más avanzadas**, incluso cuando estas parecen muy distintas a primera vista. En particular, aquí se sientan las bases para entender:
-
-- **Large Language Models (LLMs)**, utilizados en chatbots, asistentes de programación, copilotos de código y sistemas de generación automática de texto  
-- **Sistemas basados en agentes**, donde múltiples componentes con roles específicos interactúan para resolver tareas complejas  
-- **MCP (Model Context Protocol)** y otros mecanismos de integración que estructuran cómo los modelos reciben contexto, producen salidas y se conectan con herramientas  
-- **Técnicas de evaluación de LLMs**, que analizan precisión, consistencia, utilidad y comportamiento de sistemas basados en modelos de lenguaje  
-
-Aunque estas tecnologías operan a mayor escala, **reutilizan los mismos principios** que se estudian en este bootcamp: predicción, clasificación, flujo de datos, decisiones de diseño y validación del comportamiento de una funcionalidad.
-
----
-
-### 🔗 Continuidad del programa de bootcamps
-[Ir a la sección](roadmap.qmd)
-
-Este es el **primero de una serie de bootcamps**. Los siguientes estarán orientados específicamente a:
-
-- **LLMs, agentes y su integración en aplicaciones de software**  
-- **MCP y arquitecturas de interacción con modelos**  
-- **Métodos y criterios para evaluar sistemas basados en LLMs**  
-
-Este bootcamp cumple, por tanto, un rol formativo clave: **preparar el terreno conceptual y práctico** para abordar estas tecnologías con criterio técnico y no solo desde el uso superficial de herramientas.
-
----
-
 #### 🎯 ¿Qué puedes esperar de este bootcamp?
 
 En este bootcamp aprenderás a:
@@ -120,6 +93,21 @@ Para sacar el máximo provecho:
   - qué hace la funcionalidad  
   - cómo está implementada  
   - qué decisiones técnicas tomaste  
+
+---
+
+
+### 🔗 Continuidad del programa de bootcamps
+[Ir a la sección](roadmap.qmd)
+
+Este es el **primero de una serie de bootcamps**. Los siguientes estarán orientados específicamente a:
+
+- **LLMs, agentes y su integración en aplicaciones de software**  
+- **MCP y arquitecturas de interacción con modelos**  
+- **Métodos y criterios para evaluar sistemas basados en LLMs**  
+
+Este bootcamp cumple, por tanto, un rol formativo clave: **preparar el terreno conceptual y práctico** para abordar estas tecnologías con criterio técnico y no solo desde el uso superficial de herramientas.
+
 
 ---
 
