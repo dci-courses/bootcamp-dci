@@ -2,7 +2,7 @@
 
 #### 🤖💻 Bootcamp de Implementación de Funcionalidades de Software basadas en Inteligencia Artificial
 
-En este bootcamp aprenderás a **implementar funcionalidades de software que incorporan capacidades de inteligencia artificial**, integrándolas en aplicaciones reales. El foco está en **construir funcionalidades concretas**, no en entrenar modelos ni en estudiar teoría de inteligencia artificial.
+En este bootcamp aprenderás a **implementar funcionalidades de software que se basan en inteligencia artificial**, integrándolas en aplicaciones reales. El foco está en **construir funcionalidades concretas**, no en entrenar modelos ni en estudiar teoría de inteligencia artificial.
 
 Trabajarás con **ml5.js 🤖** (https://ml5js.org), una biblioteca de aprendizaje automático orientada al desarrollo de aplicaciones interactivas, y con **p5.js 🎨** (https://p5js.org), una biblioteca para programación creativa que facilita la creación de interfaces visuales e interactivas en el navegador. A lo largo del bootcamp analizarás e implementarás una **funcionalidad de clasificación de imágenes 🖼️**, abordando su integración, comportamiento y validación dentro de una aplicación de software.
 
@@ -14,13 +14,7 @@ El material está organizado para que:
 
 ---
 
-### 🧠 ¿De qué trata este bootcamp?
-
-En esta sección se presenta el enfoque general del bootcamp y qué significa implementar una funcionalidad basada en inteligencia artificial desde la perspectiva del desarrollo de software, poniendo el énfasis en comportamiento, integración y decisiones de diseño.
-
----
-
-#### 🎯 ¿Qué puedes esperar de este bootcamp?
+### 🎯 ¿Qué puedes esperar de este bootcamp?
 
 En este bootcamp aprenderás a:
 
@@ -34,7 +28,7 @@ El objetivo es que, al finalizar la tercera sesión, cuentes con una **pequeña 
 
 ---
 
-#### 🖥️ Sesiones sincrónicas
+### 🖥️ Sesiones sincrónicas
 
 Las **tres sesiones sincrónicas online** se realizarán a través de **Zoom**, utilizando el mismo enlace para todas las sesiones.
 
@@ -49,7 +43,7 @@ Antes de cada sesión sincrónica, se espera que los estudiantes:
 
 ---
 
-#### 📅 ¿Cuál es el programa del bootcamp?
+### 📅 ¿Cuál es el programa del bootcamp?
 
 | **Sesión y fecha** | **Tema** | **Descripción** |
 |---|---|---|
@@ -59,7 +53,7 @@ Antes de cada sesión sincrónica, se espera que los estudiantes:
 
 ---
 
-#### 🧩 ¿Cuáles son los prerrequisitos?
+### 🧩 ¿Cuáles son los prerrequisitos?
 
 Para seguir este bootcamp se espera que tengas:
 
@@ -71,7 +65,7 @@ No se asume conocimiento previo de aprendizaje automático ni de las bibliotecas
 
 ---
 
-#### 🛠️ ¿Qué herramientas necesito?
+### 🛠️ ¿Qué herramientas necesito?
 
 Solo necesitas:
 
@@ -81,7 +75,7 @@ Solo necesitas:
 
 ---
 
-#### 🚀 ¿Cómo aprovechar mejor el bootcamp?
+### 🚀 ¿Cómo aprovechar mejor el bootcamp?
 
 Para sacar el máximo provecho:
 
@@ -96,7 +90,7 @@ Para sacar el máximo provecho:
 ---
 
 
-#### 🔗 Continuidad del programa de bootcamps
+### 🔗 Continuidad del programa de bootcamps
 [Ir a la sección](roadmap.qmd)
 
 Este es el **primero de una serie de bootcamps**. Los siguientes estarán orientados específicamente a:
@@ -110,6 +104,6 @@ Este bootcamp cumple, por tanto, un rol formativo clave: **preparar el terreno c
 
 ---
 
-#### 💰 Financiamiento
+### 💰 Financiamiento
 
 Este bootcamp cuenta con financiamiento del **Proyecto ANID Ingeniería de Frontera hacia el 2030** y del **Fondo de Desarrollo Educativo UFRO**, como una experiencia piloto orientada al fortalecimiento de competencias técnicas en la articulación pregrado–posgrado.
