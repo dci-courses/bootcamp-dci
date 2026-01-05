@@ -204,7 +204,7 @@ function draw() {
     // Mostrar la etiqueta detectada en pantalla
     text("Etiqueta: " + label, 10, height - 20);
 }
-
+````
 
 ### 1. Declaración de Variables
 
