@@ -5,7 +5,6 @@ toc: false
 
 ## 🔮 El problema de la predicción
 
-
 ::: {.callout-tip title="Idea clave"}
 Comprender el problema de la predicción es el primer paso para entender cualquier funcionalidad de software basada en inteligencia artificial, incluida la clasificación de imágenes. Antes de hablar de modelos, librerías o implementación, es fundamental aclarar qué significa que un sistema “prediga” algo.
 :::
@@ -16,9 +15,7 @@ En el contexto del software, una **predicción** puede entenderse como:
 - Un resultado basado en **patrones aprendidos previamente**
 - Una **estimación**, no una certeza absoluta
 
-
 El sistema no razona ni interpreta el mundo como una persona. Su comportamiento se limita a procesar datos y generar una salida siguiendo relaciones establecidas a partir de datos anteriores.
-
 
 Esta idea suele ser difícil de comprender al comienzo, porque tendemos a atribuirle al sistema una forma de razonamiento similar a la humana. Una analogía útil es pensar en una persona que **aprende por repetición**, no por comprensión explícita.
 
@@ -41,25 +38,53 @@ La siguiente figura ilustra la diferencia entre ambos tipos de predicción utili
 
 ![](figures/regresion_vs_clasificacion.png){fig-align="center" width="90%"}
 
-La **regresión** corresponde a predicciones cuyo resultado es un **valor numérico continuo**. Un ejemplo clásico es la **predicción de temperatura**. En este tipo de problema:
+La **regresión** corresponde a predicciones cuyo resultado es un **valor numérico continuo**. Un ejemplo clásico es la **predicción de temperatura**.
 
-- El sistema produce un número, como “22 grados”
-- El valor pertenece a un rango continuo de posibles resultados
-- El objetivo es aproximarse lo más posible al valor real
+La siguiente tabla muestra un conjunto simplificado de datos de entrada y el valor que se desea predecir:
+
+| Día | Temperatura mañana (°C) | Humedad (%) | Nubosidad | Temperatura tarde (°C) |
+|----|-------------------------|-------------|-----------|------------------------|
+| 1  | 14.0                    | 80          | Alta      | 18.5                   |
+| 2  | 16.5                    | 65          | Media     | 22.0                   |
+| 3  | 18.0                    | 55          | Baja      | 25.3                   |
+
+En este caso:
+
+- Las columnas de la izquierda corresponden a **datos de entrada**
+- La última columna es el **valor numérico que se quiere predecir**
+- El resultado es un número continuo dentro de un rango posible
 
 El número exacto puede variar, pero siempre representa una magnitud medible.
 
-La **clasificación**, en cambio, corresponde a predicciones cuyo resultado es una **categoría**. Un ejemplo simple es la predicción del estado del tiempo en términos como “bueno” o “malo”. En este caso:
+La **clasificación**, en cambio, corresponde a predicciones cuyo resultado es una **categoría**. Un ejemplo simple es la predicción del estado del tiempo en términos como “bueno” o “malo”.
 
-- El sistema no entrega un número
-- La salida pertenece a un conjunto finito de clases posibles
-- El objetivo es **asignar una clase**, no aproximar un valor
+La siguiente tabla ilustra este tipo de problema:
+
+| Día | Temperatura (°C) | Humedad (%) | Viento | Estado del tiempo |
+|----|------------------|-------------|--------|-------------------|
+| 1  | 18               | 70          | Bajo   | Bueno             |
+| 2  | 15               | 85          | Alto   | Malo              |
+| 3  | 22               | 60          | Bajo   | Bueno             |
+
+En este caso:
+
+- Los datos de entrada siguen siendo valores medibles
+- La salida **no es un número**
+- El sistema debe elegir una **clase** entre un conjunto finito de opciones
 
 Esta distinción es fundamental, porque la **clasificación de imágenes** pertenece claramente a este segundo tipo. Cuando un sistema clasifica una imagen:
 
 - No mide algo continuo
 - No produce un valor numérico como salida principal
 - Decide **a qué clase pertenece la imagen**
+
+Por ejemplo, una tabla conceptual para clasificación de imágenes podría verse así:
+
+| Imagen | Características extraídas | Clase asignada |
+|------|----------------------------|----------------|
+| Imagen 1 | Bordes, colores, formas | Gato           |
+| Imagen 2 | Bordes, texturas         | Perro          |
+| Imagen 3 | Sombras, contornos       | Ave            |
 
 Otro aspecto importante es entender que, tanto en regresión como en clasificación, una predicción **no es una verdad absoluta**. El sistema no “sabe” cuál es la respuesta correcta. Lo que hace es:
 
