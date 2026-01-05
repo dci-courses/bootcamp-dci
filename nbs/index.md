@@ -18,8 +18,6 @@ En particular, estas ideas son la base para comprender y utilizar tecnologías a
 
 - **Large Language Models (LLMs)**, utilizados en chatbots, asistentes de programación y sistemas de generación de contenido  
 - **Sistemas basados en agentes**, donde múltiples componentes interactúan para resolver tareas complejas  
-- **MCP (Model Context Protocol)**, para la integración estructurada de modelos en herramientas y flujos de trabajo  
-- **Técnicas de evaluación de LLMs**, orientadas a analizar calidad, confiabilidad y comportamiento de sistemas basados en modelos de lenguaje  
 
 Muchas de estas tecnologías reutilizan los mismos principios trabajados en este bootcamp, aunque los oculten detrás de interfaces más complejas.
 
