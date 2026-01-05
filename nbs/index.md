@@ -33,7 +33,7 @@ El objetivo es que, al finalizar la tercera sesión, cuentes con una **pequeña 
 Las **tres sesiones sincrónicas online** se realizarán a través de **Zoom**, utilizando el mismo enlace para todas las sesiones.
 
 - **⏰ Horario:** **17:00 a 18:00 (hora de Chile)**  
-- **🔗 Zoom:** https://zoom.us/j/000000000  
+- **🔗 Zoom:** https://reuna.zoom.us/j/87367765384  
 
 Antes de cada sesión sincrónica, se espera que los estudiantes:
 
@@ -91,7 +91,6 @@ Para sacar el máximo provecho:
 
 
 ### 🔗 Continuidad del programa de bootcamps
-[Ir a la sección](roadmap.qmd)
 
 Este es el **primero de una serie de bootcamps**. Los siguientes estarán orientados específicamente a:
 
@@ -101,6 +100,17 @@ Este es el **primero de una serie de bootcamps**. Los siguientes estarán orient
 
 Este bootcamp cumple, por tanto, un rol formativo clave: **preparar el terreno conceptual y práctico** para abordar estas tecnologías con criterio técnico y no solo desde el uso superficial de herramientas.
 
+---
+### 📝 Inscripciones tardías (cupos adicionales)
+
+Debido al interés generado por el bootcamp, **hemos recibido varios mensajes solicitando cupos adicionales**. Por este motivo, y de manera excepcional, **estamos aceptando nuevas inscripciones tardías**, siempre que existan cupos disponibles.
+
+Si no alcanzaste a inscribirte en el período inicial, puedes hacerlo directamente a través del siguiente formulario:
+
+👉 **Formulario de inscripción:**  
+[https://docs.google.com/forms/d/e/1FAIpQLSfYbyWX0aOn5OJ9PkTNY1Z2T5UhX0p43iTKi-dGUP-cfptEug/viewform?usp=header](https://docs.google.com/forms/d/e/1FAIpQLSfYbyWX0aOn5OJ9PkTNY1Z2T5UhX0p43iTKi-dGUP-cfptEug/viewform?usp=header)
+
+Las inscripciones se cerrarán automáticamente una vez completados los cupos adicionales.
 
 ---
 
