@@ -205,21 +205,24 @@ function draw() {
     text("Etiqueta: " + label, 10, height - 20);
 }
 
-````
 
 ### 1. Declaración de Variables
 
 Primero, declaramos las variables que necesitaremos durante todo el proceso:
 
 ```javascript
+// Clasificador de imágenes cargado desde Teachable Machine
 let classifier;
-let video;
-let label = "";
-```
 
-* `classifier`: Almacenará el modelo entrenado en Teachable Machine
-* `video`: Guardará el video capturado desde la cámara
-* `label`: Contendrá el resultado de la clasificación
+// Video capturado en tiempo real desde la cámara web
+let video;
+
+// Etiqueta resultante de la clasificación
+let label = "";
+
+// URL del modelo entrenado en Teachable Machine
+const modelURL = "https://teachablemachine.withgoogle.com/models/bXy2kDNi/";
+````
 
 ### 2. Carga del Modelo (preload)
 
@@ -230,8 +233,6 @@ function preload() {
     classifier = ml5.imageClassifier(modelURL);
 }
 ```
-
-* `ml5.imageClassifier(modelURL)`: Carga el modelo entrenado en Teachable Machine
 
 ### 3. Configuración Inicial (setup)
 
@@ -245,10 +246,6 @@ function setup() {
     classifier.classify(video, gotResult);
 }
 ```
-
-* `createCanvas(640, 520)`: Crea un lienzo para mostrar el video
-* `createCapture(VIDEO)`: Activa la cámara
-* `classifier.classify(video, gotResult)`: Inicia la clasificación del video
 
 ### 4. Procesamiento de Resultados
 
@@ -265,5 +262,17 @@ function gotResult(error, results) {
 }
 ```
 
-* `results[0].label`: Etiqueta más probable detectada por el modelo
-* La clasificación se repite de forma continua
+### 5. Visualización del Resultado (draw)
+
+La función `draw()` se ejecuta varias veces por segundo:
+
+```javascript
+function draw() {
+    image(video, 0, 0, width, height);
+    fill(255);
+    stroke(0);
+    strokeWeight(2);
+    textSize(18);
+    text("Etiqueta: " + label, 10, height - 20);
+}
+```
