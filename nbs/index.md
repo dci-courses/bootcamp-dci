@@ -2,11 +2,7 @@
 
 #### 🤖💻 Bootcamp de Implementación de Funcionalidades de Software basadas en Inteligencia Artificial
 
-Este bootcamp aborda **los fundamentos necesarios para comprender cómo funcionan las funcionalidades de software basadas en inteligencia artificial**, independientemente de la herramienta o modelo específico que se utilice. Entender conceptos como **predicción**, **clasificación**, **flujo de datos**, **decisiones de diseño** y **comportamiento de una funcionalidad con IA** es clave para poder trabajar posteriormente con herramientas más avanzadas, como los **Large Language Models (LLMs)**, sistemas basados en **agentes**, o protocolos de integración como **MCP**. Muchas tecnologías actuales —por ejemplo, chatbots, asistentes de programación, sistemas de recomendación o herramientas de análisis automático— se apoyan en estos mismos principios, aunque los oculten detrás de interfaces más complejas. Este bootcamp entrega esa base conceptual y práctica.
-
-Además, este es el **primero de una serie de bootcamps**. Los siguientes estarán orientados específicamente a **LLMs**, **MCP (Model Context Protocol)** y **técnicas de evaluación de sistemas basados en LLMs**, donde se retomarán y ampliarán las ideas trabajadas aquí. Por ello, este bootcamp cumple un rol formativo fundamental: **preparar el terreno** para comprender, implementar y evaluar funcionalidades más sofisticadas en etapas posteriores.
-
-En este bootcamp aprenderás a **implementar funcionalidades de software que incorporan capacidades de IA**, integrándolas en aplicaciones reales. El foco está en **construir funcionalidades concretas**, no en entrenar modelos ni en estudiar teoría de inteligencia artificial.
+En este bootcamp aprenderás a **implementar funcionalidades de software que incorporan capacidades de inteligencia artificial**, integrándolas en aplicaciones reales. El foco está en **construir funcionalidades concretas**, no en entrenar modelos ni en estudiar teoría de inteligencia artificial.
 
 Trabajarás con **ml5.js 🤖** (https://ml5js.org), una biblioteca de aprendizaje automático orientada al desarrollo de aplicaciones interactivas, y con **p5.js 🎨** (https://p5js.org), una biblioteca para programación creativa que facilita la creación de interfaces visuales e interactivas en el navegador. A lo largo del bootcamp analizarás e implementarás una **funcionalidad de clasificación de imágenes 🖼️**, abordando su integración, comportamiento y validación dentro de una aplicación de software.
 
@@ -16,7 +12,9 @@ El material está organizado para que:
 - **La implementes** paso a paso  
 - **La expliques y demuestres** al final del bootcamp  
 
----
+Este bootcamp aborda **los fundamentos necesarios para comprender cómo funcionan las funcionalidades de software basadas en inteligencia artificial**, independientemente de la herramienta o modelo específico que se utilice. Entender conceptos como **predicción**, **clasificación**, **flujo de datos**, **decisiones de diseño** y **comportamiento de una funcionalidad con IA** es clave para poder trabajar posteriormente con herramientas más avanzadas, como los **Large Language Models (LLMs)**, sistemas basados en **agentes**, o protocolos de integración como **MCP**. Muchas tecnologías actuales, como chatbots, asistentes de programación, sistemas de recomendación o herramientas de análisis automático, se apoyan en estos mismos principios, aunque los oculten detrás de interfaces más complejas.
+
+Además, este es el **primero de una serie de bootcamps**. Los siguientes estarán orientados específicamente a **LLMs**, **MCP (Model Context Protocol)** y **técnicas de evaluación de sistemas basados en LLMs**, donde se retomarán y ampliarán las ideas trabajadas aquí. Por ello, este bootcamp cumple un rol formativo fundamental: **preparar el terreno** para comprender, implementar y evaluar funcionalidades más sofisticadas en etapas posteriores.
 
 #### 🎯 ¿Qué puedes esperar de este bootcamp?
 
@@ -29,8 +27,6 @@ En este bootcamp aprenderás a:
 - Comunicar decisiones técnicas de forma clara y precisa  
 
 El objetivo es que, al finalizar la tercera sesión, cuentes con una **pequeña implementación funcional ✅**, construida de manera progresiva a lo largo del bootcamp.
-
----
 
 #### 🖥️ Sesiones sincrónicas
 
@@ -47,8 +43,6 @@ Antes de cada sesión sincrónica, se espera que los estudiantes:
 
 Esto es necesario para aprovechar el trabajo conjunto durante las sesiones online.
 
----
-
 #### 📅 ¿Cuál es el programa del bootcamp?
 
 | **Sesión y fecha** | **Tema** | **Descripción** |
@@ -56,8 +50,6 @@ Esto es necesario para aprovechar el trabajo conjunto durante las sesiones onlin
 | **Sesión 1 – Martes 6 de enero de 2026** | Comprensión de una funcionalidad basada en IA 🤖 | Análisis guiado de una funcionalidad de software que incorpora IA. Se estudia su propósito, flujo de datos, entradas, salidas y comportamiento esperado. |
 | **Sesión 2 – Miércoles 7 de enero de 2026** | Implementación de clasificación de imágenes 🖼️ | Implementación práctica de una **funcionalidad de clasificación de imágenes** utilizando **ml5.js 🤖** y **p5.js 🎨**, integrándola en una aplicación de software. |
 | **Sesión 3 – Jueves 8 de enero de 2026** | Demostraciones de los estudiantes 🎤 | Presentación y explicación de una **pequeña implementación funcional**, desarrollada a partir del trabajo realizado durante el bootcamp. |
-
----
 
 #### 🧩 ¿Cuáles son los prerrequisitos?
 
@@ -73,8 +65,6 @@ No se asume conocimiento previo de:
 - **ml5.js**  
 - **p5.js**  
 
----
-
 #### 🛠️ ¿Qué herramientas necesito?
 
 Solo necesitas:
@@ -85,8 +75,6 @@ Solo necesitas:
 - Acceso a:
   - **ml5.js 🤖** → https://ml5js.org  
   - **p5.js 🎨** → https://p5js.org  
-
----
 
 #### 🚀 ¿Cómo aprovechar mejor el bootcamp?
 
@@ -99,8 +87,6 @@ Para sacar el máximo provecho:
   - Qué hace la funcionalidad  
   - Cómo está implementada  
   - Qué decisiones técnicas tomaste  
-
----
 
 #### 💰 Financiamiento
 
