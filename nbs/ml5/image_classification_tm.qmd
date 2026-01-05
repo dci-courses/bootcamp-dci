@@ -1,5 +1,5 @@
 ---
-title: "Clasificador de Video"
+title: "Clasificador de Video con Teachable Machine"
 description: "Este es un modelo entrenado en Teachable Machine que clasifica imágenes en tiempo real usando la cámara."
 format: html
 ---
@@ -109,9 +109,9 @@ window.addEventListener('load', function() {
                 p.text("Etiqueta: " + label, 10, p.height - 20);
 
                 let emoji = "🫷";
-                if (label === "nighttime") {
+                if (label === "noche") {
                     emoji = "☽";
-                } else if (label === "daytime") {
+                } else if (label === "día") {
                     emoji = "🌞";
                 }
 
@@ -144,39 +144,67 @@ window.addEventListener('load', function() {
 ### Código Completo
 
 ```javascript
+// Clasificador de imágenes cargado desde Teachable Machine
 let classifier;
+
+// Video capturado en tiempo real desde la cámara web
 let video;
+
+// Etiqueta resultante de la clasificación
 let label = "";
+
+// URL del modelo entrenado en Teachable Machine
 const modelURL = "https://teachablemachine.withgoogle.com/models/bXy2kDNi/";
 
+// Se ejecuta antes de setup() y se usa para cargar recursos
 function preload() {
+    // Cargar el modelo de clasificación entrenado previamente
     classifier = ml5.imageClassifier(modelURL);
 }
 
 function setup() {
+    // Crear el lienzo donde se mostrará el video
     createCanvas(640, 520);
+
+    // Activar la cámara y capturar el video
     video = createCapture(VIDEO);
+
+    // Ocultar el elemento HTML del video (solo se usa el canvas)
     video.hide();
+
+    // Iniciar la primera clasificación del video
     classifier.classify(video, gotResult);
 }
 
+// Función callback que se ejecuta cuando el modelo entrega un resultado
 function gotResult(error, results) {
+    // Verificar si ocurrió un error durante la clasificación
     if (error) {
         console.error(error);
         return;
     }
+
+    // Guardar la etiqueta más probable
     label = results[0].label;
+
+    // Volver a clasificar el siguiente frame del video
     classifier.classify(video, gotResult);
 }
 
 function draw() {
+    // Dibujar el video en el lienzo
     image(video, 0, 0, width, height);
+
+    // Configurar el estilo del texto
     fill(255);
     stroke(0);
     strokeWeight(2);
     textSize(18);
+
+    // Mostrar la etiqueta detectada en pantalla
     text("Etiqueta: " + label, 10, height - 20);
 }
+
 ````
 
 ### 1. Declaración de Variables
