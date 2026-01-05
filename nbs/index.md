@@ -2,9 +2,13 @@
 
 #### 🤖💻 Bootcamp de Implementación de Funcionalidades de Software basadas en Inteligencia Artificial
 
+##### ¿De qué trata este bootcamp?
+
 En este bootcamp aprenderás a **implementar funcionalidades de software que incorporan capacidades de inteligencia artificial**, integrándolas en aplicaciones reales. El foco está en **construir funcionalidades concretas**, no en entrenar modelos ni en estudiar teoría de inteligencia artificial.
 
 Trabajarás con **ml5.js 🤖** (https://ml5js.org), una biblioteca de aprendizaje automático orientada al desarrollo de aplicaciones interactivas, y con **p5.js 🎨** (https://p5js.org), una biblioteca para programación creativa que facilita la creación de interfaces visuales e interactivas en el navegador. A lo largo del bootcamp analizarás e implementarás una **funcionalidad de clasificación de imágenes 🖼️**, abordando su integración, comportamiento y validación dentro de una aplicación de software.
+
+##### ¿Cómo está organizado el aprendizaje?
 
 El material está organizado para que:
 
@@ -12,7 +16,11 @@ El material está organizado para que:
 - **La implementes** paso a paso  
 - **La expliques y demuestres** al final del bootcamp  
 
+##### ¿Por qué este bootcamp es una base importante?
+
 Este bootcamp aborda **los fundamentos necesarios para comprender cómo funcionan las funcionalidades de software basadas en inteligencia artificial**, independientemente de la herramienta o modelo específico que se utilice. Entender conceptos como **predicción**, **clasificación**, **flujo de datos**, **decisiones de diseño** y **comportamiento de una funcionalidad con IA** es clave para poder trabajar posteriormente con herramientas más avanzadas.
+
+##### Relación con tecnologías actuales y emergentes
 
 En particular, estas ideas son la base para comprender y utilizar tecnologías actuales y emergentes como:
 
@@ -21,10 +29,12 @@ En particular, estas ideas son la base para comprender y utilizar tecnologías a
 
 Muchas de estas tecnologías reutilizan los mismos principios trabajados en este bootcamp, aunque los oculten detrás de interfaces más complejas.
 
+##### Continuidad del programa de bootcamps
+
 Este es el **primero de una serie de bootcamps**. Los siguientes estarán orientados específicamente a:
 
-- **LLMs, Agentes y su integración en aplicaciones de software**  
-- **MCP y arquitecturas de interacción con modelos** 
+- **LLMs, agentes y su integración en aplicaciones de software**  
+- **MCP y arquitecturas de interacción con modelos**  
 - **Métodos y criterios para evaluar sistemas basados en LLMs**  
 
 Por ello, este bootcamp cumple un rol formativo fundamental: **preparar el terreno** para comprender, implementar y evaluar funcionalidades más sofisticadas en etapas posteriores.
