@@ -108,9 +108,10 @@ Debido al interés generado por el bootcamp, **hemos recibido varios mensajes so
 Si no alcanzaste a inscribirte en el período inicial, puedes hacerlo directamente a través del siguiente formulario:
 
 👉 **Formulario de inscripción:**  
-https://docs.google.com/forms/d/e/1FAIpQLSfYbyWX0aOn5OJ9PkTNY1Z2T5UhX0p43iTKi-dGUP-cfptEug/viewform?usp=header
+[Completar formulario de inscripción](https://docs.google.com/forms/d/e/1FAIpQLSfYbyWX0aOn5OJ9PkTNY1Z2T5UhX0p43iTKi-dGUP-cfptEug/viewform?usp=header)
 
 Las inscripciones se cerrarán automáticamente una vez completados los cupos adicionales.
+
 
 ---
 
