@@ -1,5 +1,5 @@
 ---
-
+title: " 📹 Clasificador de Video en Tiempo Real"
 description: "Funcionalidad de software que clasifica imágenes capturadas desde una cámara usando un modelo entrenado en Teachable Machine."
 format: html
 ---
