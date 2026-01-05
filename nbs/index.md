@@ -15,7 +15,6 @@ El material está organizado para que:
 ---
 
 ### 🧠 ¿De qué trata este bootcamp?
-[Ir a la sección](intro_bootcamp.qmd)
 
 En esta sección se presenta el enfoque general del bootcamp y qué significa implementar una funcionalidad basada en inteligencia artificial desde la perspectiva del desarrollo de software, poniendo el énfasis en comportamiento, integración y decisiones de diseño.
 
