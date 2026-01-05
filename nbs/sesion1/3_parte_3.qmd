@@ -9,9 +9,9 @@ toc: false
 Analizar cómo se hacen predicciones usando el clasificador es el tercer paso para comprender una funcionalidad de clasificación de imágenes como parte de un sistema de software. En esta etapa, el foco está en observar **qué ocurre cuando el clasificador ya está implementado** y recibe nuevos datos como entrada.
 :::
 
-Para este análisis se utilizará un **clasificador de imágenes que ya forma parte del repositorio del curso**, ubicado en el siguiente archivo:
+Para este análisis se utilizará un **clasificador de imágenes que ya forma parte del repositorio del curso**, ubicado en el siguiente enlace:
 
-`ml5/image_classification.qmd`
+[https://dci-courses.github.io/bootcamp-dci/ml5/image_classification.html](https://dci-courses.github.io/bootcamp-dci/ml5/image_classification.html)
 
 El objetivo aquí no es estudiar su implementación interna, sino **observar su comportamiento** desde el punto de vista de la funcionalidad completa.
 
