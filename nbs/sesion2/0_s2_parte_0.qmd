@@ -3,11 +3,13 @@ format: html
 toc: false
 ---
 
-## Sesión 2 – Implementación de una funcionalidad de clasificación de imágenes 🖼️🤖
+## Implementación de una funcionalidad de clasificación de imágenes 🖼️🤖
 
-En esta sesión trabajamos en la **implementación y análisis de una funcionalidad de clasificación de imágenes** dentro de una aplicación de software. El foco está en **cómo una aplicación integra un modelo de IA y utiliza sus resultados**, no en entrenar modelos ni en estudiar teoría de inteligencia artificial.
+En esta sesión trabajamos en la **implementación y análisis de una funcionalidad de clasificación de imágenes** dentro de una aplicación de software. El foco está en **cómo una aplicación integra un modelo de inteligencia artificial y utiliza sus resultados**, no en entrenar modelos ni en estudiar teoría de inteligencia artificial.
 
-El trabajo se organiza en **dos casos complementarios**, diseñados para comparar decisiones habituales en el desarrollo de software con IA.
+El objetivo de la sesión es comprender cómo una funcionalidad basada en IA se incorpora a un sistema de software real, identificando sus componentes, su flujo de ejecución y las decisiones de diseño involucradas.
+
+El trabajo de la sesión se organiza en **dos casos complementarios**, diseñados para comparar enfoques habituales en el desarrollo de software que integra modelos de aprendizaje automático ya existentes.
 
 ---
 
@@ -18,91 +20,28 @@ Durante toda la sesión se utiliza **Visual Studio Code (VS Code)** como editor 
 :::
 
 ::: {.callout-warning}
-Instala la extensión **Live Server (Go Live)** en VS Code y ejecuta los ejemplos usando **Go Live**.  
-Abrir los archivos HTML directamente desde el sistema de archivos puede provocar errores o comportamientos inesperados.
+Es obligatorio instalar la extensión **Live Server (Go Live)** en VS Code y ejecutar los ejemplos usando esta herramienta.
+
+Abrir los archivos HTML directamente desde el sistema de archivos puede provocar errores, especialmente al trabajar con acceso a la cámara y con modelos de inteligencia artificial cargados desde la web.
 :::
 
 ---
 
 ## Estructura de la sesión
 
-Durante la sesión se trabajan dos casos:
+Durante la sesión se trabajan dos casos prácticos:
 
-- **Caso 1**: clasificación de imágenes desde la cámara usando un modelo entrenado en Teachable Machine  
-- **Caso 2**: clasificación de una imagen fija usando un modelo preentrenado  
-
-::: {.callout-tip}
-Aunque ambos casos parecen similares desde el punto de vista del usuario, **usan modelos con supuestos distintos**. Esta diferencia es clave para entender decisiones de diseño en software con IA.
-:::
-
----
-
-## Caso 1 – Modelo entrenado en Teachable Machine
-
-En este caso analizamos una funcionalidad de clasificación de imágenes que utiliza un **modelo entrenado en Teachable Machine** y procesa **video capturado desde la cámara**.
-
-👉 [Ejemplo de clasificación con Teachable Machine](https://dci-courses.github.io/bootcamp-dci/ml5/image_classification_tm.html)
-
-La aplicación captura imágenes desde la cámara del dispositivo, clasifica los frames en tiempo real y muestra la etiqueta asociada a la predicción actual.
-
-### Trabajo local
-
-Descarga un archivo comprimido (.zip) que contiene los archivos `index.html` y `sketch.js`.  
-Abre la carpeta en VS Code y ejecuta **Go Live** para iniciar el servidor local.
-
-::: {.callout-warning}
-La versión web del ejemplo está adaptada al framework **Quarto** utilizado para la documentación del curso.  
-No reutilices directamente ese código para ejecución local.
-:::
-
-👉 *(link de descarga del zip – Caso 1)*
-
-### En qué nos fijamos
-
-Observamos cómo la aplicación integra un modelo entrenado externamente, cómo se capturan imágenes desde la cámara, cómo fluye la información desde la imagen hasta la predicción y cómo se actualiza la interfaz con el resultado del clasificador.
-
----
-
-## Caso 2 – Modelo de clasificación preentrenado
-
-En este caso analizamos una funcionalidad de clasificación de imágenes que utiliza un **modelo preentrenado** y procesa **una imagen fija**, sin capturar imágenes desde la cámara.
-
-👉 [Ejemplo de clasificación con modelo preentrenado](https://dci-courses.github.io/bootcamp-dci/ml5/image_classification.html)
-
-La aplicación clasifica una imagen puntual utilizando un modelo genérico, sin entrenamiento previo por parte del desarrollador.
-
-### Trabajo local
-
-Descarga un archivo comprimido (.zip) que contiene los archivos `index.html` y `sketch.js`.  
-Abre la carpeta en VS Code y ejecuta **Go Live** para iniciar el servidor local.
-
-👉 *(link de descarga del zip – Caso 2)*
+- **Caso 1**: implementación de una funcionalidad de clasificación de imágenes que utiliza un modelo entrenado en Teachable Machine y procesa video capturado desde la cámara.
+- **Caso 2**: implementación de una funcionalidad de clasificación que utiliza un modelo preentrenado y procesa una imagen fija.
 
 ::: {.callout-tip}
-En este caso, el desarrollador **no controla las clases ni los datos de entrenamiento**. El comportamiento del sistema depende completamente del modelo reutilizado.
+Aunque ambos casos resuelven el mismo problema general —clasificar imágenes—, **parten de supuestos distintos sobre el modelo y la entrada de datos**. Esta diferencia es clave para entender decisiones de diseño en aplicaciones de software que incorporan IA.
 :::
 
-### En qué nos fijamos
-
-Observamos qué implica usar un modelo preentrenado, qué tipo de categorías reconoce el modelo, qué información devuelve el clasificador para una imagen fija y qué limitaciones aparecen al no controlar el entrenamiento ni el contexto.
-
----
-
-## Comparación entre los casos
-
-::: {.callout-note}
-Comparar ambos casos ayuda a entender que integrar IA en software no es solo un problema técnico, sino una **decisión de diseño**.
-:::
-
-En el **Caso 1**, la aplicación procesa un flujo continuo de imágenes y el comportamiento del sistema refleja decisiones tomadas durante el entrenamiento del modelo.  
-En el **Caso 2**, la aplicación procesa una imagen puntual y utiliza un modelo genérico, reutilizable, pero con menor control sobre sus resultados.
+Cada caso se aborda por separado, analizando su funcionamiento, sus limitaciones y las implicancias que tiene el tipo de modelo utilizado en el comportamiento de la aplicación.
 
 ---
 
 ## Resultado esperado de la sesión
 
-Al finalizar la sesión deberías poder explicar cómo se implementa una funcionalidad de clasificación de imágenes, identificar el rol del modelo dentro de la aplicación, diferenciar entre clasificación de video y clasificación de imágenes fijas, y justificar decisiones de diseño asociadas al uso de modelos entrenados o preentrenados.
-
-::: {.callout-tip}
-En la **Sesión 3**, no se evalúa si “la predicción es correcta”, sino **qué tan bien explicas el funcionamiento y las decisiones de tu implementación**.
-:::
+Al finalizar la sesión deberías ser capaz de describir cómo se implementa una funcionalidad de clasificación de imágenes dentro de una aplicación de software, identificar el rol que cumple el modelo de IA en el sistema y explicar las diferencias prácticas entre trabajar con modelos entrenados específicamente y modelos preentrenados reutilizables.
