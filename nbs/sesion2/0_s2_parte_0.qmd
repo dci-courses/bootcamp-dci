@@ -3,7 +3,7 @@ format: html
 toc: false
 ---
 
-## Sesión 2 – Implementación de una funcionalidad de clasificación de imágenes 🖼️🤖
+## Implementación de una funcionalidad de clasificación de imágenes 🖼️🤖
 
 En esta sesión trabajamos en la **implementación y análisis de una funcionalidad de clasificación de imágenes** dentro de una aplicación de software. El foco está en **cómo una aplicación integra un modelo de IA y utiliza sus resultados**, no en entrenar modelos ni en estudiar teoría de inteligencia artificial.
 
