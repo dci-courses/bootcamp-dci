@@ -16,6 +16,7 @@ El objetivo de este caso es comprender cómo una aplicación de software integra
 👉 [Ejemplo de clasificación con modelo preentrenado](https://dci-courses.github.io/bootcamp-dci/ml5/image_classification.html)
 
 Este ejemplo muestra una aplicación web que:
+
 - carga una imagen como entrada,
 - ejecuta una clasificación sobre esa imagen,
 - y muestra la etiqueta correspondiente como resultado.
