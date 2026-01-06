@@ -20,7 +20,7 @@ website:
           - sesion3/2_s3_parte_2.qmd
       - section: Sesión 4
           
-      - section: ml5 + p5.js
+      - section: Ejemplos
         contents:
           - ml5/image_classification.qmd
           - ml5/image_classification_tm.qmd

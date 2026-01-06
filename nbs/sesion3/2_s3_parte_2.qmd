@@ -9,7 +9,7 @@ En esta segunda parte de la sesión, los estudiantes realizan una **demostració
 
 El objetivo principal es **explicar el funcionamiento de la funcionalidad**, poniendo el foco en el problema de predicción que aborda y en cómo la aplicación utiliza las predicciones generadas por el modelo.
 
----
+
 
 ## Qué se espera en la demostración
 
@@ -21,7 +21,7 @@ Durante la demostración, cada estudiante o grupo debe presentar una funcionalid
 
 La demostración debe permitir visualizar el comportamiento del sistema y entender cómo responde frente a distintas entradas.
 
----
+
 
 ## Qué deben explicar
 
@@ -34,7 +34,7 @@ Más allá de mostrar que la funcionalidad “funciona”, los estudiantes deben
 
 No se espera una explicación técnica detallada del modelo ni de la librería utilizada.
 
----
+
 
 ## Relación con el caso más avanzado
 
@@ -48,7 +48,7 @@ Esto permite que los estudiantes establezcan comparaciones, por ejemplo:
 
 El énfasis está en **reconocer similitudes y diferencias en el tipo de problema de predicción**, no en replicar el caso avanzado.
 
----
+
 
 ## Criterio central de evaluación
 
