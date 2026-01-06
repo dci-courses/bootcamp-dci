@@ -4,104 +4,36 @@ toc: false
 ---
 
 ## Sesión 3 – Demostraciones de los estudiantes 🎤  
-### Explicar una funcionalidad de detección de objetos
+### Explicar funcionalidades de predicción en aplicaciones de software
 
-En esta sesión los estudiantes presentan y explican una **funcionalidad de software basada en inteligencia artificial**, desarrollada a partir de los conceptos y ejemplos trabajados durante el bootcamp.
+Esta sesión está dedicada a **presentar y explicar funcionalidades de software basadas en inteligencia artificial**, desarrolladas a partir del trabajo realizado durante el bootcamp.
 
-El foco de la sesión **no está en escribir código nuevo**, sino en **explicar correctamente el problema de predicción que resuelve la aplicación**, su funcionamiento general y las decisiones de diseño involucradas.
-
----
-
-## Propósito de la sesión
-
-Esta sesión tiene como objetivo que los estudiantes demuestren que comprenden:
-
-- qué tipo de problema de predicción aborda una funcionalidad basada en IA,
-- cómo se integra un modelo preentrenado en una aplicación de software,
-- cómo se interpretan y utilizan los resultados del modelo,
-- y cómo estas decisiones influyen en el comportamiento del sistema.
-
-La evaluación se centra en la **claridad de la explicación**, no en la precisión de las predicciones ni en la complejidad del código.
+A diferencia de las sesiones anteriores, el foco **no está en implementar nuevas funcionalidades**, sino en **explicar correctamente el problema de predicción que resuelve una aplicación**, cómo se comporta y qué decisiones de diseño están involucradas.
 
 ---
 
-## Ejemplo de referencia: detección de objetos
+## Estructura de la sesión
 
-Durante la sesión se utiliza como referencia una funcionalidad de **detección de objetos**, basada en un modelo preentrenado (COCO-SSD), que analiza imágenes o video y detecta múltiples objetos simultáneamente.
+La sesión se organiza en **dos partes complementarias**.
 
-A diferencia de los ejemplos vistos en sesiones anteriores, este caso **no clasifica una imagen completa con una sola etiqueta**, sino que:
+En la primera parte, se analiza un **caso más avanzado**, conceptualmente similar a los ejemplos trabajados en sesiones anteriores, pero que aborda un **problema de predicción distinto y más complejo**. Este análisis permite ampliar la discusión y contrastar distintos tipos de predicciones dentro de una aplicación de software.
 
-- identifica múltiples objetos en una misma imagen o frame de video,
-- localiza cada objeto en el espacio,
-- y entrega una salida estructurada con varias predicciones al mismo tiempo.
-
-Este cambio permite analizar un **problema de predicción distinto** al de la clasificación simple.
+En la segunda parte, los estudiantes realizan una **demostración** de una funcionalidad funcional, mostrando su comportamiento y explicando cómo utiliza un modelo de IA para producir predicciones.
 
 ---
 
-## El problema de predicción en este caso
+## Enfoque de la sesión
 
-En este ejemplo, el problema de predicción no es responder a la pregunta “¿qué es esta imagen?”, sino algo más complejo:
+Durante toda la sesión, la atención está puesta en:
 
-- ¿qué objetos aparecen en la imagen o en el video?
-- ¿cuántos objetos hay?
-- ¿dónde se encuentra cada objeto?
+- identificar qué problema de predicción resuelve la funcionalidad,
+- comprender el tipo de entrada y salida del sistema,
+- y explicar cómo la aplicación utiliza las predicciones para construir su comportamiento.
 
-El modelo produce como salida un conjunto de detecciones, donde cada detección incluye:
-- una etiqueta,
-- y una ubicación aproximada dentro de la imagen.
-
-La aplicación debe interpretar esta información y decidir cómo mostrarla al usuario.
+No se evalúa la corrección de la predicción ni el rendimiento del modelo, sino la **comprensión del problema y la capacidad de explicarlo con claridad**.
 
 ---
 
-## Qué deben explicar los estudiantes
-
-Durante su demostración, cada estudiante o grupo debe ser capaz de explicar, en sus propias palabras:
-
-- qué tipo de entrada procesa la funcionalidad (imagen o video),
-- qué tipo de salida produce el modelo,
-- cómo se diferencian estas predicciones de una clasificación simple,
-- cómo la aplicación utiliza las predicciones para construir la interfaz,
-- y qué limitaciones tiene el sistema.
-
-No se espera que los estudiantes expliquen detalles matemáticos ni internos del modelo.
-
----
-
-## Aspectos clave a observar
-
-Durante las demostraciones, se pone atención en:
-
-- la comprensión del flujo general de la funcionalidad,
-- la correcta identificación del tipo de problema de predicción,
-- la capacidad de describir el comportamiento del sistema en tiempo real,
-- y la claridad al comunicar decisiones de diseño.
-
-El énfasis está en **explicar cómo funciona la funcionalidad**, no en justificar si la predicción es “correcta” o “incorrecta”.
-
----
-
-## Relación con las sesiones anteriores
-
-Esta sesión cierra el bootcamp conectando los conceptos vistos previamente:
-
-- en la Sesión 1 se analizó qué significa que un sistema “prediga”,
-- en la Sesión 2 se implementaron funcionalidades de clasificación,
-- en la Sesión 3 se amplía la mirada hacia un problema de predicción más complejo.
-
-El objetivo es que los estudiantes reconozcan que distintas funcionalidades de IA responden a **problemas de predicción distintos**, aunque utilicen herramientas similares.
-
----
-
-## Resultado esperado
-
-Al finalizar la sesión, los estudiantes deberían ser capaces de explicar con claridad:
-
-- qué problema de predicción resuelve una funcionalidad basada en detección de objetos,
-- cómo se integra un modelo preentrenado en una aplicación,
-- y por qué este tipo de funcionalidad se comporta de manera diferente a un clasificador de imágenes simple.
-
-::: {.callout-tip}
-En esta sesión no se evalúa la “inteligencia” del sistema, sino la **comprensión del problema y la capacidad de explicarlo correctamente**.
+::: {.callout-note}
+Esta sesión cierra el bootcamp conectando los conceptos trabajados previamente y reforzando la idea de que integrar inteligencia artificial en software implica, antes que nada, **entender el problema de predicción que se está resolviendo**.
 :::
