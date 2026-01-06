@@ -1,0 +1,75 @@
+---
+format: html
+toc: false
+---
+
+## Caso 1 – Clasificación de imágenes usando un modelo entrenado en Teachable Machine
+
+En este caso analizamos una funcionalidad de clasificación de imágenes que utiliza un **modelo entrenado en Teachable Machine** y procesa **video capturado desde la cámara**. El objetivo no es entrenar el modelo, sino **comprender cómo una aplicación de software integra un modelo ya existente y utiliza sus predicciones**.
+
+La funcionalidad recibe imágenes de manera continua desde la cámara del dispositivo, ejecuta una clasificación sobre cada frame y muestra el resultado directamente en la interfaz de la aplicación.
+
+---
+
+## Ejemplo base
+
+👉 [Ejemplo de clasificación con Teachable Machine](https://dci-courses.github.io/bootcamp-dci/ml5/image_classification_tm.html)
+
+Este ejemplo muestra una aplicación web que:
+- accede a la cámara del dispositivo,
+- clasifica el video en tiempo real,
+- y visualiza la etiqueta detectada junto con un indicador gráfico.
+
+---
+
+## Trabajo local
+
+Para trabajar este caso durante la sesión, se utiliza una **versión local del ejemplo**.
+
+Se entrega un archivo comprimido (.zip) que contiene exactamente dos archivos:
+- `index.html`
+- `sketch.js`
+
+Abre la carpeta en **Visual Studio Code** y ejecuta **Go Live** para iniciar el servidor local y abrir la aplicación en el navegador.
+
+::: {.callout-warning}
+La versión web del ejemplo está adaptada al framework **Quarto**, utilizado para la documentación del curso.
+
+Esa adaptación modifica la estructura del código y no es adecuada para ejecución local. Para este caso, **trabaja exclusivamente con la versión incluida en el archivo `.zip`**.
+:::
+
+👉 [Descargar código del Caso 1](../data/codigo/caso_1/caso_1.zip)
+
+---
+
+## Funcionamiento general de la funcionalidad
+
+Desde el punto de vista del software, la funcionalidad implementa el siguiente flujo:
+
+- la aplicación inicializa el acceso a la cámara,
+- cada frame del video se entrega al modelo de clasificación,
+- el modelo produce una etiqueta como salida,
+- la aplicación actualiza la interfaz con el resultado.
+
+::: {.callout-tip}
+El modelo se comporta como un **componente externo**: la aplicación no conoce cómo fue entrenado ni cómo toma decisiones, solo consume su salida.
+:::
+
+---
+
+## En qué nos fijamos durante el análisis
+
+Durante el trabajo con este caso, nos enfocamos en observar:
+
+- cómo se integra un modelo entrenado externamente en una aplicación de software,
+- cómo se gestionan entradas continuas de datos (video),
+- cómo se encadena la clasificación de múltiples frames,
+- cómo se representa el resultado del modelo en la interfaz.
+
+El foco está en **el diseño de la funcionalidad**, no en la precisión del modelo ni en la calidad de las predicciones.
+
+---
+
+## Relación con la sesión
+
+Este caso sirve como punto de partida para entender una funcionalidad de clasificación **basada en un modelo específico y entrenado para un contexto concreto**. En el siguiente caso se analizará un enfoque distinto, utilizando un modelo preentrenado y una entrada de datos diferente, lo que permitirá contrastar decisiones de diseño.
