@@ -8,6 +8,9 @@ website:
           - sesion1/1_parte_1.qmd
           - sesion1/2_parte_2.qmd
           - sesion1/3_parte_3.qmd
+      - section: Sesión 2
+        contents:
+          - sesion2/0_s2_parte_0.qmd
       - section: ml5 + p5.js
         contents:
           - ml5/image_classification.qmd
