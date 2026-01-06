@@ -26,9 +26,7 @@ Este ejemplo muestra una aplicación web que:
 
 Para trabajar este caso durante la sesión, se utiliza una **versión local del ejemplo**.
 
-Se entrega un archivo comprimido (.zip) que contiene exactamente dos archivos:
-- `index.html`
-- `sketch.js`
+Se entrega un archivo comprimido (.zip) que contiene los archivos necesarios para ejecutar la funcionalidad de manera local. Algunos archivos adicionales están incluidos únicamente para asegurar compatibilidad con el entorno de ejecución y no requieren modificaciones durante la sesión.
 
 Abre la carpeta en **Visual Studio Code** y ejecuta **Go Live** para iniciar el servidor local y abrir la aplicación en el navegador.
 
@@ -42,7 +40,7 @@ Esa adaptación modifica la estructura del código y no es adecuada para ejecuci
 
 ---
 
-## Funcionamiento general de la funcionalidad
+## Funcionamiento general 
 
 Desde el punto de vista del software, la funcionalidad implementa el siguiente flujo:
 
