@@ -16,6 +16,7 @@ La funcionalidad recibe imágenes de manera continua desde la cámara del dispos
 👉 [Ejemplo de clasificación con Teachable Machine](https://dci-courses.github.io/bootcamp-dci/ml5/image_classification_tm.html)
 
 Este ejemplo muestra una aplicación web que:
+
 - accede a la cámara del dispositivo,
 - clasifica el video en tiempo real,
 - y visualiza la etiqueta detectada junto con un indicador gráfico.
