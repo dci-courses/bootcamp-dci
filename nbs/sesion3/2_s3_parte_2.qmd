@@ -1,0 +1,66 @@
+---
+format: html
+toc: false
+---
+
+## Parte 2 – Demostración y explicación de una funcionalidad
+
+En esta segunda parte de la sesión, los estudiantes realizan una **demostración** de una funcionalidad de software basada en inteligencia artificial, desarrollada a partir del trabajo realizado durante el bootcamp.
+
+El objetivo principal es **explicar el funcionamiento de la funcionalidad**, poniendo el foco en el problema de predicción que aborda y en cómo la aplicación utiliza las predicciones generadas por el modelo.
+
+---
+
+## Qué se espera en la demostración
+
+Durante la demostración, cada estudiante o grupo debe presentar una funcionalidad que:
+
+- procese una entrada clara (imagen o video),
+- integre un modelo de inteligencia artificial,
+- y produzca una salida observable para el usuario.
+
+La demostración debe permitir visualizar el comportamiento del sistema y entender cómo responde frente a distintas entradas.
+
+---
+
+## Qué deben explicar
+
+Más allá de mostrar que la funcionalidad “funciona”, los estudiantes deben ser capaces de explicar:
+
+- qué tipo de problema de predicción resuelve la funcionalidad,
+- qué información entrega el modelo como resultado,
+- cómo la aplicación interpreta y utiliza esa información,
+- y cómo estas decisiones influyen en el comportamiento del sistema.
+
+No se espera una explicación técnica detallada del modelo ni de la librería utilizada.
+
+---
+
+## Relación con el caso más avanzado
+
+La demostración se realiza **a la luz del análisis del caso más avanzado** visto en la primera parte de la sesión.
+
+Esto permite que los estudiantes establezcan comparaciones, por ejemplo:
+
+- entre una predicción única y múltiples predicciones,
+- entre una salida simple y una salida estructurada,
+- entre un comportamiento estático y uno dinámico.
+
+El énfasis está en **reconocer similitudes y diferencias en el tipo de problema de predicción**, no en replicar el caso avanzado.
+
+---
+
+## Criterio central de evaluación
+
+La evaluación de esta parte se basa en un criterio central:
+
+- **la claridad y coherencia de la explicación**.
+
+No se evalúa la precisión de la predicción, ni la complejidad del código, ni la originalidad de la funcionalidad.  
+Lo relevante es que el estudiante pueda **explicar correctamente qué está prediciendo el sistema y cómo se usa esa predicción**.
+
+---
+
+::: {.callout-tip}
+Una buena demostración no es la que “acierta más”, sino la que **mejor explica el problema de predicción que la funcionalidad está resolviendo**.
+:::

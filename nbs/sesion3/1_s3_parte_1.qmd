@@ -1,0 +1,93 @@
+---
+format: html
+toc: false
+---
+
+## Parte 1 – Un problema de predicción más avanzado: detección de objetos
+
+En esta primera parte de la sesión se analiza una funcionalidad de software que aborda un **problema de predicción más avanzado** que los trabajados en sesiones anteriores, pero que mantiene una estructura conceptual similar.
+
+El objetivo no es aprender una nueva técnica, sino **entender cómo cambia el problema de predicción** y cómo ese cambio impacta en el comportamiento de la aplicación.
+
+---
+
+## Continuidad con lo ya visto
+
+En la Sesión 2 se trabajó con funcionalidades de **clasificación de imágenes**, donde el sistema recibe una entrada (imagen o video) y produce una **única etiqueta** como resultado.
+
+Desde el punto de vista del software, ese tipo de funcionalidad responde a una pregunta simple del tipo:
+
+“¿Qué es esta imagen?”
+
+La detección de objetos mantiene la misma idea general de predicción, pero **extiende el problema**.
+
+---
+
+## Ejemplo del caso más avanzado
+
+👉 [Ejemplo de detección de objetos](https://dci-courses.github.io/bootcamp-dci/ml5/object_detection.html)
+
+Este ejemplo muestra una funcionalidad que utiliza un modelo preentrenado para **detectar múltiples objetos simultáneamente** en una imagen o en un flujo de video, marcando su posición aproximada en pantalla.
+
+El comportamiento observable de la aplicación permite analizar cómo cambia la predicción cuando la salida del modelo deja de ser una etiqueta única.
+
+---
+
+## Cómo cambia el problema de predicción
+
+En una funcionalidad de detección de objetos, el sistema ya no produce una sola predicción, sino **múltiples predicciones simultáneas**.
+
+El problema deja de ser identificar una imagen completa y pasa a ser:
+
+- identificar qué objetos aparecen,
+- determinar cuántos objetos hay,
+- y estimar dónde se encuentra cada uno dentro de la imagen o el video.
+
+Esto implica que la salida del modelo ya no es una etiqueta simple, sino un **conjunto de resultados estructurados**.
+
+---
+
+## Tipo de entrada y tipo de salida
+
+Desde el punto de vista de la aplicación:
+
+- la **entrada** puede ser una imagen fija o un flujo de video,
+- la **salida** es una colección de detecciones.
+
+Cada detección incluye información distinta a la vista en la clasificación simple, como:
+- una etiqueta asociada al objeto,
+- y una ubicación aproximada dentro del espacio visual.
+
+La aplicación debe interpretar esta información y decidir cómo representarla en la interfaz.
+
+---
+
+## Implicancias para el diseño del software
+
+Este cambio en el problema de predicción tiene consecuencias directas en el diseño de la funcionalidad:
+
+- la interfaz ya no muestra un único resultado,
+- el sistema debe manejar múltiples predicciones al mismo tiempo,
+- el comportamiento del sistema es dinámico y cambia continuamente,
+- y la aplicación debe actualizar su estado en función de nuevas predicciones.
+
+Estas decisiones no dependen del modelo en sí, sino de **cómo la aplicación utiliza las predicciones**.
+
+---
+
+## En qué fijarse durante el análisis
+
+Al analizar este caso más avanzado, el foco está en observar:
+
+- cómo se diferencia este problema de una clasificación simple,
+- qué tipo de información entrega el modelo,
+- cómo esa información es utilizada por la aplicación,
+- y qué nuevas decisiones de diseño aparecen.
+
+El interés está en **comprender el problema de predicción**, no en evaluar la calidad del modelo ni la precisión de las detecciones.
+
+---
+
+::: {.callout-note}
+Este caso sirve como marco de referencia para las demostraciones de la segunda parte de la sesión, mostrando que distintas funcionalidades de IA pueden compartir herramientas similares, pero resolver **problemas de predicción distintos**.
+:::

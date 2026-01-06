@@ -16,6 +16,9 @@ website:
       - section: Sesión 3
         contents:
           - sesion3/0_s3_parte_0.qmd
+          - sesion3/1_s3_parte_1.qmd
+          - sesion3/2_s3_parte_2.qmd
+      - section: Sesión 4
           
       - section: ml5 + p5.js
         contents:
