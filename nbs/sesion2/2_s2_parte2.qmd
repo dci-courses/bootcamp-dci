@@ -65,3 +65,5 @@ El foco está en **las implicancias de diseño**, no en la precisión del result
 ## Relación con la sesión
 
 Este caso complementa el Caso 1 al mostrar un enfoque distinto para implementar una funcionalidad de clasificación de imágenes. Comparar ambos casos permite entender cómo el tipo de modelo y el tipo de entrada influyen directamente en el diseño y el comportamiento de la aplicación.
+
+
