@@ -12,6 +12,7 @@ website:
         contents:
           - sesion2/0_s2_parte_0.qmd
           - sesion2/1_s2_parte_1.qmd
+          - sesion2/2_s2_parte_2.qmd
       - section: ml5 + p5.js
         contents:
           - ml5/image_classification.qmd

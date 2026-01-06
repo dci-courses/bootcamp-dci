@@ -1,0 +1,67 @@
+---
+format: html
+toc: false
+---
+
+## Caso 2 – Clasificación de una imagen usando un modelo preentrenado
+
+En este caso analizamos una funcionalidad de clasificación de imágenes que utiliza un **modelo preentrenado** y procesa **una imagen fija**, sin capturar imágenes desde la cámara. A diferencia del Caso 1, el desarrollador no entrena ni ajusta el modelo, sino que **reutiliza un modelo genérico ya existente**.
+
+El objetivo de este caso es comprender cómo una aplicación de software integra un modelo preentrenado y utiliza sus predicciones para clasificar una imagen puntual.
+
+---
+
+## Ejemplo base
+
+👉 [Ejemplo de clasificación con modelo preentrenado](https://dci-courses.github.io/bootcamp-dci/ml5/image_classification.html)
+
+Este ejemplo muestra una aplicación web que:
+- carga una imagen como entrada,
+- ejecuta una clasificación sobre esa imagen,
+- y muestra la etiqueta correspondiente como resultado.
+
+---
+
+## Trabajo local
+
+Para trabajar este caso durante la sesión, se utiliza una **versión local del ejemplo**.
+
+Se entrega un archivo comprimido (.zip) que contiene los archivos necesarios para ejecutar la funcionalidad de manera local. Algunos archivos adicionales están incluidos únicamente para asegurar compatibilidad con el entorno de ejecución y no requieren modificaciones durante la sesión.
+
+Abre la carpeta en **Visual Studio Code** y ejecuta **Go Live** para iniciar el servidor local y abrir la aplicación en el navegador.
+
+👉 *(link de descarga del zip – Caso 2)*
+
+---
+
+## Funcionamiento general de la funcionalidad
+
+Desde el punto de vista del software, la funcionalidad implementa el siguiente flujo:
+
+- la aplicación carga una imagen fija,
+- la imagen se entrega al modelo de clasificación,
+- el modelo produce una etiqueta como salida,
+- la aplicación muestra el resultado al usuario.
+
+::: {.callout-tip}
+En este caso, el comportamiento del sistema depende completamente del modelo reutilizado. La aplicación no controla las clases posibles ni los datos utilizados durante el entrenamiento.
+:::
+
+---
+
+## En qué nos fijamos durante el análisis
+
+Durante el trabajo con este caso, nos enfocamos en observar:
+
+- qué implica integrar un modelo preentrenado en una aplicación de software,
+- qué tipo de categorías reconoce el modelo,
+- qué información devuelve el clasificador para una imagen fija,
+- qué limitaciones aparecen al no controlar el entrenamiento ni el contexto.
+
+El foco está en **las implicancias de diseño**, no en la precisión del resultado ni en la interpretación semántica de la imagen.
+
+---
+
+## Relación con la sesión
+
+Este caso complementa el Caso 1 al mostrar un enfoque distinto para implementar una funcionalidad de clasificación de imágenes. Comparar ambos casos permite entender cómo el tipo de modelo y el tipo de entrada influyen directamente en el diseño y el comportamiento de la aplicación.
