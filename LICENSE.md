@@ -1,4 +1,4 @@
-# Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional
+Creative Commons Attribution-ShareAlike 4.0 International
 
 Este trabajo está licenciado bajo la **Licencia Creative Commons
 Atribución-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)**.
