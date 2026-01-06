@@ -22,7 +22,10 @@ Durante toda la sesión se utiliza **Visual Studio Code (VS Code)** como editor 
 ::: {.callout-warning}
 Es obligatorio instalar la extensión **Live Server (Go Live)** en VS Code y ejecutar los ejemplos usando esta herramienta.
 
-Abrir los archivos HTML directamente desde el sistema de archivos puede provocar errores, especialmente al trabajar con acceso a la cámara y con modelos de inteligencia artificial cargados desde la web.
+La extensión puede instalarse desde el **Marketplace de Visual Studio Code** en el siguiente enlace:  
+[Live Server – Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+
+Alternativamente, la extensión puede buscarse directamente desde el **buscador de extensiones de VS Code**, escribiendo *Live Server*.
 :::
 
 ---
